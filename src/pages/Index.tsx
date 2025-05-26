@@ -78,6 +78,15 @@ const Index = () => {
     return <LoadingScreen />;
   }
 
+  const featuresArray = [
+    { key: 'experience', ...t.features.experience },
+    { key: 'specialists', ...t.features.specialists },
+    { key: 'parts', ...t.features.parts },
+    { key: 'technology', ...t.features.technology },
+    { key: 'location', ...t.features.location },
+    { key: 'navigation', ...t.features.navigation }
+  ];
+
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Header */}
@@ -187,8 +196,8 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Object.entries(t.features).map(([key, feature], index) => (
-              <Card key={key} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white">
+            {featuresArray.map((feature, index) => (
+              <Card key={feature.key} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white">
                 <CardHeader className="pb-4">
                   <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-4">
                     <div className="w-6 h-6 bg-gray-400 rounded"></div>
