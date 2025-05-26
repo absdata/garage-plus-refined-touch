@@ -141,7 +141,7 @@ const Index = () => {
             <div className="relative animate-fade-in">
               <div className="aspect-[4/3] bg-gradient-to-br from-slate-200 via-gray-200 to-slate-200 rounded-3xl overflow-hidden shadow-2xl shadow-slate-300/30">
                 <img 
-                  src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                  src="mercedes-benz-s-class-w222-3705.jpg"
                   alt="Mercedes-Benz W222"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -240,7 +240,7 @@ const Index = () => {
                   <Button 
                     className="w-full bg-slate-600 hover:bg-slate-700 text-white rounded-xl py-3 transition-all duration-300"
                   >
-                    Смотреть услуги
+                    Подробнее
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
@@ -266,7 +266,7 @@ const Index = () => {
                   <Button 
                     className="w-full bg-slate-600 hover:bg-slate-700 text-white rounded-xl py-3 transition-all duration-300"
                   >
-                    Смотреть услуги
+                    Подробнее
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
@@ -292,7 +292,7 @@ const Index = () => {
                   <Button 
                     className="w-full bg-slate-600 hover:bg-slate-700 text-white rounded-xl py-3 transition-all duration-300"
                   >
-                    Смотреть услуги
+                    Подробнее
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
@@ -318,7 +318,7 @@ const Index = () => {
                   <Button 
                     className="w-full bg-slate-600 hover:bg-slate-700 text-white rounded-xl py-3 transition-all duration-300"
                   >
-                    Смотреть услуги
+                    Подробнее
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
