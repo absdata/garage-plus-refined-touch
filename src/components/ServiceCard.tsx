@@ -34,8 +34,7 @@ export const ServiceCard = ({ title, description, price, image }: ServiceCardPro
       
       <CardContent className="pt-0">
         <Button 
-          variant="outline" 
-          className="w-full border-gray-300 hover:border-gray-900 hover:bg-gray-900 hover:text-white rounded-xl py-3 transition-all duration-300"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-3 transition-all duration-300"
         >
           Подробнее
           <ArrowRight className="ml-2 h-4 w-4" />

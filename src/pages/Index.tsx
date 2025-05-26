@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,6 +8,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { PromotionCarousel } from "@/components/PromotionCarousel";
 import { LoadingScreen } from "@/components/LoadingScreen";
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -138,7 +138,7 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-6 text-lg font-medium rounded-2xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg font-medium rounded-2xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
                 >
                   {t.hero.bookService}
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -146,7 +146,7 @@ const Index = () => {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-gray-300 hover:border-gray-400 px-8 py-6 text-lg font-medium rounded-2xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                  className="border-blue-300 hover:border-blue-400 hover:bg-blue-50 px-8 py-6 text-lg font-medium rounded-2xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                 >
                   <MapPin className="mr-2 h-5 w-5" />
                   {t.hero.buildRoute}
@@ -239,25 +239,110 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ServiceCard 
-              title="Техническое обслуживание"
-              description="Регламентное ТО A и ТО B, замена масла и фильтров, диагностика"
-              price="от 8 500 ₽"
-              image="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-            />
-            <ServiceCard 
-              title="Ремонт ходовой части"
-              description="Пневмоподвеска AIRMATIC, тормозная система, рычаги"
-              price="от 12 000 ₽"
-              image="https://images.unsplash.com/photo-1486496572940-2bb2341fdbdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-            />
-            <ServiceCard 
-              title="Обслуживание АКПП"
-              description="Замена масла, ремонт гидроблока, диагностика 7G-Tronic"
-              price="от 15 000 ₽"
-              image="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-            />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Link to="/services/maintenance">
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white group cursor-pointer">
+                <div className="aspect-[4/3] overflow-hidden rounded-t-2xl">
+                  <img 
+                    src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    alt="Техническое обслуживание"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-xl">ТО и Ремонт</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Техническое обслуживание, ремонт ходовой части, диагностика
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <Button 
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-3 transition-all duration-300"
+                  >
+                    Смотреть услуги
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/services/transmission">
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white group cursor-pointer">
+                <div className="aspect-[4/3] overflow-hidden rounded-t-2xl">
+                  <img 
+                    src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    alt="Обслуживание АКПП"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-xl">Обслуживание АКПП</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Замена масла, ремонт гидроблока, диагностика 7G-Tronic
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <Button 
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-3 transition-all duration-300"
+                  >
+                    Смотреть услуги
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/services/engine">
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white group cursor-pointer">
+                <div className="aspect-[4/3] overflow-hidden rounded-t-2xl">
+                  <img 
+                    src="https://images.unsplash.com/photo-1486496572940-2bb2341fdbdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    alt="Ремонт ДВС"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-xl">Обслуживание ДВС</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Капитальный ремонт, замена цепи ГРМ, диагностика
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <Button 
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-3 transition-all duration-300"
+                  >
+                    Смотреть услуги
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/services/tuning">
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white group cursor-pointer">
+                <div className="aspect-[4/3] overflow-hidden rounded-t-2xl">
+                  <img 
+                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    alt="Тюнинг"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-xl">Тюнинг</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    AMG-пакет, перешив салона, колесные диски
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <Button 
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-3 transition-all duration-300"
+                  >
+                    Смотреть услуги
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </div>
       </section>
@@ -287,7 +372,7 @@ const Index = () => {
             />
             <TestimonialCard 
               name="Елена В."
-              car="Mercedes S 350 W222"
+              car="Mer Mercedes S 350 W222"
               text="Регулярно прохожу ТО в Garage Plus. Всегда довольна результатом и отношением персонала."
               rating={5}
             />
