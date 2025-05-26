@@ -92,7 +92,7 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
-    background: linear-gradient(135deg, #fff7ed, #fef3c7, #fde68a);
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9, #e2e8f0);
     min-height: 100vh;
   }
 
@@ -118,8 +118,8 @@
     animation: float 3s ease-in-out infinite;
   }
 
-  .animate-pulse-warm {
-    animation: pulse-warm 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  .animate-pulse-elegant {
+    animation: pulse-elegant 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   /* Custom scrollbar */
@@ -139,7 +139,7 @@
 
   .hover-lift:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 25px -5px rgba(255, 165, 0, 0.15), 0 8px 10px -6px rgba(255, 165, 0, 0.1);
+    box-shadow: 0 20px 25px -5px rgba(100, 116, 139, 0.15), 0 8px 10px -6px rgba(100, 116, 139, 0.1);
   }
 
   /* Loading animation */
@@ -153,13 +153,13 @@
     animation: spin 3s linear infinite;
   }
 
-  /* New sunset animations */
+  /* Mercedes S-Class inspired animations */
   @keyframes glow {
     from {
-      box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
+      box-shadow: 0 0 20px rgba(100, 116, 139, 0.3);
     }
     to {
-      box-shadow: 0 0 30px rgba(255, 165, 0, 0.6), 0 0 40px rgba(255, 165, 0, 0.3);
+      box-shadow: 0 0 30px rgba(100, 116, 139, 0.6), 0 0 40px rgba(100, 116, 139, 0.3);
     }
   }
 
@@ -172,7 +172,7 @@
     }
   }
 
-  @keyframes pulse-warm {
+  @keyframes pulse-elegant {
     0%, 100% {
       opacity: 1;
       transform: scale(1);
@@ -193,30 +193,30 @@
   }
 
   .animate-shimmer {
-    background: linear-gradient(90deg, transparent, rgba(255, 165, 0, 0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(100, 116, 139, 0.4), transparent);
     background-size: 200% 100%;
     animation: shimmer 2s infinite;
   }
 }
 
-/* Custom styling for better visual hierarchy */
+/* Custom styling for Mercedes S-Class aesthetic */
 .text-gradient {
-  background: linear-gradient(135deg, #ea580c, #f59e0b, #eab308);
+  background: linear-gradient(135deg, #1e293b, #475569, #64748b);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.bg-warm-gradient {
-  background: linear-gradient(135deg, #fff7ed, #fed7aa, #fde68a);
+.bg-elegant-gradient {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0, #cbd5e1);
 }
 
-.shadow-warm {
-  box-shadow: 0 10px 25px -5px rgba(255, 165, 0, 0.2), 0 4px 6px -2px rgba(255, 165, 0, 0.1);
+.shadow-elegant {
+  box-shadow: 0 10px 25px -5px rgba(100, 116, 139, 0.2), 0 4px 6px -2px rgba(100, 116, 139, 0.1);
 }
 
-.shadow-warm-lg {
-  box-shadow: 0 20px 40px -10px rgba(255, 165, 0, 0.3), 0 8px 16px -4px rgba(255, 165, 0, 0.2);
+.shadow-elegant-lg {
+  box-shadow: 0 20px 40px -10px rgba(100, 116, 139, 0.3), 0 8px 16px -4px rgba(100, 116, 139, 0.2);
 }
 
 /* Smooth transitions for all interactive elements */
@@ -229,23 +229,24 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #ea580c;
+  outline: 2px solid #1e293b;
   outline-offset: 2px;
 }
 
-/* Warm lighting effects */
-.warm-glow::before {
+/* Elegant lighting effects */
+.elegant-glow::before {
   content: '';
   position: absolute;
   top: -50%;
   left: -50%;
   right: -50%;
   bottom: -50%;
-  background: radial-gradient(circle, rgba(255, 165, 0, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(100, 116, 139, 0.1) 0%, transparent 70%);
   pointer-events: none;
   z-index: -1;
 }
 
-.sunset-border {
-  border-image: linear-gradient(45deg, #ea580c, #f59e0b, #eab308) 1;
+.mercedes-border {
+  border-image: linear-gradient(45deg, #1e293b, #475569, #64748b) 1;
 }
+

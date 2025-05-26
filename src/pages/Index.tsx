@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -53,10 +54,6 @@ const Index = () => {
         technology: {
           title: 'Технологии Mercedes-Benz',
           description: 'Все работы выполняются строго по технологиям завода-изготовителя. Никакой самодеятельности.'
-        },
-        location: {
-          title: 'Удобное расположение',
-          description: 'Сервис находится в 1,5 км от Москва-Сити и рядом с Поклонной горой — удобно доехать из любого района Москвы.'
         }
       },
       contact: {
@@ -78,36 +75,35 @@ const Index = () => {
     { key: 'experience', title: t.features.experience.title, description: t.features.experience.description },
     { key: 'specialists', title: t.features.specialists.title, description: t.features.specialists.description },
     { key: 'parts', title: t.features.parts.title, description: t.features.parts.description },
-    { key: 'technology', title: t.features.technology.title, description: t.features.technology.description },
-    { key: 'location', title: t.features.location.title, description: t.features.location.description }
+    { key: 'technology', title: t.features.technology.title, description: t.features.technology.description }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 text-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 text-gray-900">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-orange-100/95 via-amber-100/95 to-yellow-100/95 backdrop-blur-sm border-b border-orange-200 shadow-lg">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-100/95 via-gray-100/95 to-slate-100/95 backdrop-blur-sm border-b border-slate-200 shadow-lg">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">GARAGE</div>
-            <div className="text-2xl font-bold text-orange-400">PLUS</div>
+            <div className="text-2xl font-bold bg-gradient-to-r from-slate-700 to-gray-700 bg-clip-text text-transparent">GARAGE</div>
+            <div className="text-2xl font-bold text-slate-400">PLUS</div>
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
             <nav className="flex space-x-6">
-              <a href="#services" className="text-orange-700 hover:text-orange-900 transition-all duration-300 hover:scale-105">{t.nav.services}</a>
-              <a href="#promotions" className="text-orange-700 hover:text-orange-900 transition-all duration-300 hover:scale-105">{t.nav.promotions}</a>
-              <a href="#reviews" className="text-orange-700 hover:text-orange-900 transition-all duration-300 hover:scale-105">{t.nav.reviews}</a>
-              <a href="#contact" className="text-orange-700 hover:text-orange-900 transition-all duration-300 hover:scale-105">{t.nav.contact}</a>
-              <a href="#about" className="text-orange-700 hover:text-orange-900 transition-all duration-300 hover:scale-105">{t.nav.about}</a>
+              <a href="#services" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">{t.nav.services}</a>
+              <a href="#promotions" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">{t.nav.promotions}</a>
+              <a href="#reviews" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">{t.nav.reviews}</a>
+              <a href="#contact" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">{t.nav.contact}</a>
+              <a href="#about" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">{t.nav.about}</a>
             </nav>
           </div>
 
           <div className="flex items-center space-x-4">
             <div className="text-right">
-              <div className="text-sm text-orange-600 font-medium">Mercedes Benz</div>
-              <div className="text-xs text-orange-500">независимый специалист</div>
+              <div className="text-sm text-slate-600 font-medium">Mercedes Benz</div>
+              <div className="text-xs text-slate-500">независимый специалист</div>
             </div>
-            <div className="w-12 h-8 bg-gradient-to-r from-orange-300 to-amber-300 rounded-lg flex items-center justify-center shadow-md">
+            <div className="w-12 h-8 bg-gradient-to-r from-slate-300 to-gray-300 rounded-lg flex items-center justify-center shadow-md">
               <div className="w-6 h-6 bg-white rounded-full shadow-inner"></div>
             </div>
           </div>
@@ -115,18 +111,18 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 bg-gradient-to-br from-orange-100 via-amber-100 to-yellow-100">
+      <section className="pt-24 pb-16 px-4 bg-gradient-to-br from-slate-100 via-gray-100 to-slate-100">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-fade-in">
               <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl font-bold leading-tight bg-gradient-to-r from-orange-800 via-amber-800 to-yellow-800 bg-clip-text text-transparent">
+                <h1 className="text-4xl md:text-5xl font-bold leading-tight bg-gradient-to-r from-slate-800 via-gray-800 to-slate-700 bg-clip-text text-transparent">
                   {t.hero.title}
                 </h1>
-                <p className="text-xl text-orange-700 font-medium">
+                <p className="text-xl text-slate-700 font-medium">
                   {t.hero.subtitle}
                 </p>
-                <p className="text-lg text-orange-600">
+                <p className="text-lg text-slate-600">
                   {t.hero.description}
                 </p>
               </div>
@@ -134,7 +130,7 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-6 text-lg font-medium rounded-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 shadow-lg shadow-orange-300/50"
+                  className="bg-gradient-to-r from-slate-600 to-gray-600 hover:from-slate-700 hover:to-gray-700 text-white px-8 py-6 text-lg font-medium rounded-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 shadow-lg shadow-slate-300/50"
                 >
                   {t.hero.bookService}
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -143,14 +139,14 @@ const Index = () => {
             </div>
             
             <div className="relative animate-fade-in">
-              <div className="aspect-[4/3] bg-gradient-to-br from-orange-200 via-amber-200 to-yellow-200 rounded-3xl overflow-hidden shadow-2xl shadow-orange-300/30">
+              <div className="aspect-[4/3] bg-gradient-to-br from-slate-200 via-gray-200 to-slate-200 rounded-3xl overflow-hidden shadow-2xl shadow-slate-300/30">
                 <img 
                   src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                   alt="Mercedes-Benz W222"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl shadow-orange-200/50">
+              <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl shadow-slate-200/50">
                 <div className="flex items-center space-x-2">
                   <Star className="h-5 w-5 text-yellow-500 fill-current" />
                   <span className="font-semibold">4.9/5</span>
@@ -163,34 +159,34 @@ const Index = () => {
       </section>
 
       {/* Brand Logos */}
-      <section className="py-12 border-t border-orange-200 bg-gradient-to-r from-orange-50 to-amber-50">
+      <section className="py-12 border-t border-slate-200 bg-gradient-to-r from-slate-50 to-gray-50">
         <div className="container mx-auto px-4">
           <div className="flex justify-center items-center space-x-12 opacity-60">
-            <div className="text-2xl font-bold text-orange-400">Mercedes-Benz</div>
-            <div className="text-2xl font-bold text-amber-400">AMG</div>
-            <div className="text-2xl font-bold text-yellow-500">MAYBACH</div>
+            <div className="text-2xl font-bold text-slate-400">Mercedes-Benz</div>
+            <div className="text-2xl font-bold text-gray-400">AMG</div>
+            <div className="text-2xl font-bold text-slate-500">MAYBACH</div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-slate-50 to-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-orange-800 to-amber-800 bg-clip-text text-transparent">Почему выбирают нас</h2>
-            <p className="text-xl text-orange-700 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-slate-800 to-gray-800 bg-clip-text text-transparent">Почему выбирают нас</h2>
+            <p className="text-xl text-slate-700 max-w-2xl mx-auto">
               Профессионализм, качество и надёжность в каждой детали
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {featuresArray.map((feature, index) => (
-              <Card key={feature.key} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white/80 backdrop-blur-sm shadow-orange-200/30 group hover:bg-gradient-to-br hover:from-orange-50 hover:to-amber-50">
+              <Card key={feature.key} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white/80 backdrop-blur-sm shadow-slate-200/30 group hover:bg-gradient-to-br hover:from-slate-50 hover:to-gray-50">
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-xl text-orange-800 group-hover:text-orange-900 transition-colors duration-300">{feature.title}</CardTitle>
+                  <CardTitle className="text-xl text-slate-800 group-hover:text-slate-900 transition-colors duration-300">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-orange-600 leading-relaxed group-hover:text-orange-700 transition-colors duration-300">
+                  <CardDescription className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
                     {feature.description}
                   </CardDescription>
                 </CardContent>
@@ -201,11 +197,11 @@ const Index = () => {
       </section>
 
       {/* Promotions Section */}
-      <section id="promotions" className="py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50">
+      <section id="promotions" className="py-20 bg-gradient-to-br from-slate-50 via-gray-50 to-slate-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-orange-800 to-amber-800 bg-clip-text text-transparent">Актуальные акции</h2>
-            <p className="text-xl text-orange-700">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-slate-800 to-gray-800 bg-clip-text text-transparent">Актуальные акции</h2>
+            <p className="text-xl text-slate-700">
               Выгодные предложения на обслуживание вашего Mercedes-Benz
             </p>
           </div>
@@ -215,7 +211,7 @@ const Index = () => {
       </section>
 
       {/* Services Preview */}
-      <section id="services" className="py-20 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50">
+      <section id="services" className="py-20 bg-gradient-to-br from-slate-50 via-gray-50 to-slate-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Наши услуги</h2>
@@ -242,7 +238,7 @@ const Index = () => {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <Button 
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-3 transition-all duration-300"
+                    className="w-full bg-slate-600 hover:bg-slate-700 text-white rounded-xl py-3 transition-all duration-300"
                   >
                     Смотреть услуги
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -268,7 +264,7 @@ const Index = () => {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <Button 
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-3 transition-all duration-300"
+                    className="w-full bg-slate-600 hover:bg-slate-700 text-white rounded-xl py-3 transition-all duration-300"
                   >
                     Смотреть услуги
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -294,7 +290,7 @@ const Index = () => {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <Button 
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-3 transition-all duration-300"
+                    className="w-full bg-slate-600 hover:bg-slate-700 text-white rounded-xl py-3 transition-all duration-300"
                   >
                     Смотреть услуги
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -320,7 +316,7 @@ const Index = () => {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <Button 
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-3 transition-all duration-300"
+                    className="w-full bg-slate-600 hover:bg-slate-700 text-white rounded-xl py-3 transition-all duration-300"
                   >
                     Смотреть услуги
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -333,7 +329,7 @@ const Index = () => {
       </section>
 
       {/* Reviews Section */}
-      <section id="reviews" className="py-20 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
+      <section id="reviews" className="py-20 bg-gradient-to-br from-gray-50 via-slate-50 to-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Отзывы клиентов</h2>
@@ -366,7 +362,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50">
+      <section id="contact" className="py-20 bg-gradient-to-br from-slate-50 via-gray-50 to-slate-50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
@@ -405,42 +401,42 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-orange-900 via-amber-900 to-yellow-900 text-white py-12">
+      <footer className="bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="text-xl font-bold text-orange-300">GARAGE</div>
-                <div className="text-xl font-bold text-amber-300">PLUS</div>
+                <div className="text-xl font-bold text-slate-300">GARAGE</div>
+                <div className="text-xl font-bold text-gray-300">PLUS</div>
               </div>
-              <p className="text-orange-200">
+              <p className="text-slate-200">
                 Профессиональный ремонт и обслуживание Mercedes-Benz с 1999 года
               </p>
             </div>
             
             <div>
-              <h3 className="font-semibold text-lg mb-4 text-orange-300">Услуги</h3>
-              <ul className="space-y-2 text-orange-200">
-                <li><Link to="/services/maintenance" className="hover:text-orange-100 transition-colors">Техническое обслуживание</Link></li>
-                <li><Link to="/services/transmission" className="hover:text-orange-100 transition-colors">Обслуживание АКПП</Link></li>
-                <li><Link to="/services/engine" className="hover:text-orange-100 transition-colors">Ремонт двигателя</Link></li>
-                <li><Link to="/services/tuning" className="hover:text-orange-100 transition-colors">Тюнинг</Link></li>
+              <h3 className="font-semibold text-lg mb-4 text-slate-300">Услуги</h3>
+              <ul className="space-y-2 text-slate-200">
+                <li><Link to="/services/maintenance" className="hover:text-slate-100 transition-colors">Техническое обслуживание</Link></li>
+                <li><Link to="/services/transmission" className="hover:text-slate-100 transition-colors">Обслуживание АКПП</Link></li>
+                <li><Link to="/services/engine" className="hover:text-slate-100 transition-colors">Ремонт двигателя</Link></li>
+                <li><Link to="/services/tuning" className="hover:text-slate-100 transition-colors">Тюнинг</Link></li>
               </ul>
             </div>
             
             <div>
-              <h3 className="font-semibold text-lg mb-4 text-orange-300">Информация</h3>
-              <ul className="space-y-2 text-orange-200">
-                <li><a href="#about" className="hover:text-orange-100 transition-colors">О нас</a></li>
-                <li><a href="#reviews" className="hover:text-orange-100 transition-colors">Отзывы</a></li>
-                <li><a href="#contact" className="hover:text-orange-100 transition-colors">Контакты</a></li>
-                <li><a href="#promotions" className="hover:text-orange-100 transition-colors">Акции</a></li>
+              <h3 className="font-semibold text-lg mb-4 text-slate-300">Информация</h3>
+              <ul className="space-y-2 text-slate-200">
+                <li><a href="#about" className="hover:text-slate-100 transition-colors">О нас</a></li>
+                <li><a href="#reviews" className="hover:text-slate-100 transition-colors">Отзывы</a></li>
+                <li><a href="#contact" className="hover:text-slate-100 transition-colors">Контакты</a></li>
+                <li><a href="#promotions" className="hover:text-slate-100 transition-colors">Акции</a></li>
               </ul>
             </div>
             
             <div>
-              <h3 className="font-semibold text-lg mb-4 text-orange-300">Контакты</h3>
-              <div className="space-y-2 text-orange-200">
+              <h3 className="font-semibold text-lg mb-4 text-slate-300">Контакты</h3>
+              <div className="space-y-2 text-slate-200">
                 <p>{t.contact.address}</p>
                 <p>{t.contact.phone}</p>
                 <p>{t.contact.schedule}</p>
@@ -448,7 +444,7 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="border-t border-orange-800 mt-8 pt-8 text-center text-orange-300">
+          <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-300">
             <p>&copy; 2024 Garage Plus. Все права защищены.</p>
           </div>
         </div>
@@ -458,3 +454,4 @@ const Index = () => {
 };
 
 export default Index;
+

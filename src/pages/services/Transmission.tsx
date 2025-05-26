@@ -31,27 +31,27 @@ const Transmission = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100">
       {/* Header */}
-      <header className="bg-gradient-to-r from-orange-100/95 via-amber-100/95 to-yellow-100/95 backdrop-blur-sm border-b border-orange-200 py-4 shadow-lg">
+      <header className="bg-gradient-to-r from-slate-100/95 via-gray-100/95 to-slate-100/95 backdrop-blur-sm border-b border-slate-200 py-4 shadow-lg">
         <div className="container mx-auto px-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2 text-orange-700 hover:text-orange-900 transition-colors">
+          <Link to="/" className="flex items-center space-x-2 text-slate-700 hover:text-slate-900 transition-colors">
             <ArrowLeft className="h-5 w-5" />
             <span>Назад</span>
           </Link>
           <div className="flex items-center space-x-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">GARAGE</div>
-            <div className="text-2xl font-bold text-orange-400">PLUS</div>
+            <div className="text-2xl font-bold bg-gradient-to-r from-slate-600 to-gray-600 bg-clip-text text-transparent">GARAGE</div>
+            <div className="text-2xl font-bold text-slate-400">PLUS</div>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-orange-100 via-amber-100 to-yellow-100">
+      <section className="py-16 bg-gradient-to-br from-slate-100 via-gray-100 to-slate-100">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-800 to-amber-800 bg-clip-text text-transparent">Обслуживание и ремонт АКПП</h1>
-            <p className="text-xl text-orange-700 max-w-2xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-slate-800 to-gray-800 bg-clip-text text-transparent">Обслуживание и ремонт АКПП</h1>
+            <p className="text-xl text-slate-700 max-w-2xl mx-auto">
               Профессиональное обслуживание автоматических коробок передач Mercedes-Benz
             </p>
           </div>
@@ -64,7 +64,7 @@ const Transmission = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categories.map((category) => (
               <Link key={category.id} to={`/services/transmission/${category.id}`}>
-                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white/90 backdrop-blur-sm group cursor-pointer shadow-orange-200/30 hover:shadow-orange-300/50">
+                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white/90 backdrop-blur-sm group cursor-pointer shadow-slate-200/30 hover:shadow-slate-300/50">
                   <div className="aspect-[4/3] overflow-hidden rounded-t-2xl">
                     <img 
                       src={category.image}
@@ -74,18 +74,18 @@ const Transmission = () => {
                   </div>
                   
                   <CardHeader className="pb-4">
-                    <CardTitle className="text-xl text-orange-800 group-hover:text-orange-900 transition-colors duration-300">{category.title}</CardTitle>
-                    <p className="text-orange-600 group-hover:text-orange-700 transition-colors duration-300">{category.description}</p>
+                    <CardTitle className="text-xl text-slate-800 group-hover:text-slate-900 transition-colors duration-300">{category.title}</CardTitle>
+                    <p className="text-slate-600 group-hover:text-slate-700 transition-colors duration-300">{category.description}</p>
                   </CardHeader>
                   
                   <CardContent className="pt-0">
-                    <ul className="space-y-2 text-sm text-orange-600 mb-4">
+                    <ul className="space-y-2 text-sm text-slate-600 mb-4">
                       {category.services.map((service, index) => (
-                        <li key={index} className="group-hover:text-orange-700 transition-colors duration-300">• {service}</li>
+                        <li key={index} className="group-hover:text-slate-700 transition-colors duration-300">• {service}</li>
                       ))}
                     </ul>
                     <Button 
-                      className="w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white rounded-xl py-3 transition-all duration-300 shadow-lg shadow-orange-300/50 hover:shadow-xl hover:shadow-orange-400/60"
+                      className="w-full bg-gradient-to-r from-slate-600 to-gray-600 hover:from-slate-700 hover:to-gray-700 text-white rounded-xl py-3 transition-all duration-300 shadow-lg shadow-slate-300/50 hover:shadow-xl hover:shadow-slate-400/60"
                     >
                       Смотреть услуги
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -102,3 +102,4 @@ const Transmission = () => {
 };
 
 export default Transmission;
+
