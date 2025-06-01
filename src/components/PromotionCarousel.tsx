@@ -51,6 +51,13 @@ export const PromotionCarousel = () => {
     setCurrentSlide((prev) => (prev - 1 + promotions.length) % promotions.length);
   };
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="relative">
       <div className="flex items-center justify-between mb-8">
@@ -103,6 +110,7 @@ export const PromotionCarousel = () => {
               <div className="text-sm text-gray-500">{promo.deadline}</div>
               
               <Button 
+                onClick={scrollToContact}
                 className="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 rounded-xl transition-all duration-300 hover:shadow-lg"
               >
                 Записаться

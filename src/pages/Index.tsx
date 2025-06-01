@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -99,6 +98,13 @@ const Index = () => {
     }
   ];
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 text-gray-900">
       {/* Header */}
@@ -106,9 +112,9 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/0e1f2e66-35b1-4036-990c-a2df35a14e71.png" 
+              src="/lovable-uploads/ec5cb8ce-9a6e-4657-ae6d-ddcd09487589.png" 
               alt="GARAGE PLUS" 
-              className="h-10"
+              className="h-12 w-auto"
             />
           </Link>
           
@@ -118,7 +124,7 @@ const Index = () => {
               <a href="#promotions" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">{t.nav.promotions}</a>
               <a href="#reviews" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">{t.nav.reviews}</a>
               <a href="#contact" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">{t.nav.contact}</a>
-              <a href="#about" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">{t.nav.about}</a>
+              <Link to="/about" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">{t.nav.about}</Link>
             </nav>
           </div>
 
@@ -154,6 +160,7 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
+                  onClick={scrollToContact}
                   className="bg-gradient-to-r from-slate-600 to-gray-600 hover:from-slate-700 hover:to-gray-700 text-white px-8 py-6 text-lg font-medium rounded-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 shadow-lg shadow-slate-300/50"
                 >
                   {t.hero.bookService}
@@ -405,7 +412,7 @@ const Index = () => {
                     <p className="text-gray-600">{t.contact.address}</p>
                     <Button 
                       variant="outline"
-                      className="mt-2"
+                      className="mt-2 text-slate-700 border-slate-300 hover:bg-slate-50"
                       onClick={() => window.open('https://yandex.ru/maps/?text=' + encodeURIComponent(t.contact.address), '_blank')}
                     >
                       {t.contact.routeButton}
@@ -443,9 +450,9 @@ const Index = () => {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <img 
-                  src="/lovable-uploads/0e1f2e66-35b1-4036-990c-a2df35a14e71.png" 
+                  src="/lovable-uploads/ec5cb8ce-9a6e-4657-ae6d-ddcd09487589.png" 
                   alt="GARAGE PLUS" 
-                  className="h-8 brightness-0 invert"
+                  className="h-10 w-auto brightness-0 invert"
                 />
               </div>
               <p className="text-slate-200">
@@ -466,7 +473,7 @@ const Index = () => {
             <div>
               <h3 className="font-semibold text-lg mb-4 text-slate-300">Информация</h3>
               <ul className="space-y-2 text-slate-200">
-                <li><a href="#about" className="hover:text-slate-100 transition-colors">О нас</a></li>
+                <li><Link to="/about" className="hover:text-slate-100 transition-colors">О нас</Link></li>
                 <li><a href="#reviews" className="hover:text-slate-100 transition-colors">Отзывы</a></li>
                 <li><a href="#contact" className="hover:text-slate-100 transition-colors">Контакты</a></li>
                 <li><a href="#promotions" className="hover:text-slate-100 transition-colors">Акции</a></li>
