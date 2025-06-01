@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight, MapPin, Phone, Clock, Star, ChevronLeft, ChevronRight, Award, Shield, Wrench, Users } from 'lucide-react';
-import { ContactForm } from "@/components/ContactForm";
+import { ArrowRight, Star, Award, Shield, Wrench, Users } from 'lucide-react';
 import { ServiceCard } from "@/components/ServiceCard";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { PromotionCarousel } from "@/components/PromotionCarousel";
 import { LoadingScreen } from "@/components/LoadingScreen";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { ContactSection } from "@/components/sections/ContactSection";
 import { Link } from 'react-router-dom';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [language, setLanguage] = useState('ru');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -22,78 +22,29 @@ const Index = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const translations = {
-    ru: {
-      nav: {
-        services: 'Услуги',
-        promotions: 'Акции',
-        reviews: 'Отзывы',
-        contact: 'Контакты',
-        about: 'О нас'
-      },
-      hero: {
-        title: 'Обслуживаем по стандартам завода-изготовителя',
-        subtitle: 'Только оригинальные запчасти',
-        description: 'Профессиональный ремонт и обслуживание Mercedes-Benz W222 с 1999 года',
-        bookService: 'Записаться на сервис'
-      },
-      features: {
-        experience: {
-          title: '25 лет с Mercedes-Benz',
-          description: 'Мы обслуживаем автомобили Mercedes с 1999 года. Опыт, проверенный временем.'
-        },
-        specialists: {
-          title: 'Сертифицированные специалисты',
-          description: 'Наши мастера прошли обучение в «Мерседес-Бенц РУС» и имеют опыт работы в дилерских центрах.'
-        },
-        parts: {
-          title: 'Оригинальные запчасти',
-          description: 'Прямые поставки со складов в ОАЭ. Качество и надёжность без компромиссов.'
-        },
-        technology: {
-          title: 'Технологии Mercedes-Benz',
-          description: 'Все работы выполняются строго по технологиям завода-изготовителя. Никакой самодеятельности.'
-        }
-      },
-      contact: {
-        title: 'Записаться на сервис',
-        address: 'г. Москва, ул. Поклонная, 11 стр. 1А',
-        phone: '+7 (495) 221-8480',
-        schedule: 'ПН-ПТ: 11:30-20:30, СБ: 12:00-17:00, ВС: выходной',
-        routeButton: 'Проложить маршрут'
-      }
-    }
-  };
-
-  const t = translations[language];
-
   if (isLoading) {
     return <LoadingScreen />;
   }
 
   const featuresArray = [
     { 
-      key: 'experience', 
-      title: t.features.experience.title, 
-      description: t.features.experience.description,
+      title: '25 лет с Mercedes-Benz', 
+      description: 'Мы обслуживаем автомобили Mercedes с 1999 года. Опыт, проверенный временем.',
       icon: Award
     },
     { 
-      key: 'specialists', 
-      title: t.features.specialists.title, 
-      description: t.features.specialists.description,
+      title: 'Сертифицированные специалисты', 
+      description: 'Наши мастера прошли обучение в «Мерседес-Бенц РУС» и имеют опыт работы в дилерских центрах.',
       icon: Users
     },
     { 
-      key: 'parts', 
-      title: t.features.parts.title, 
-      description: t.features.parts.description,
+      title: 'Оригинальные запчасти', 
+      description: 'Прямые поставки со складов в ОАЭ. Качество и надёжность без компромиссов.',
       icon: Shield
     },
     { 
-      key: 'technology', 
-      title: t.features.technology.title, 
-      description: t.features.technology.description,
+      title: 'Технологии Mercedes-Benz', 
+      description: 'Все работы выполняются строго по технологиям завода-изготовителя. Никакой самодеятельности.',
       icon: Wrench
     }
   ];
@@ -107,38 +58,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 text-gray-900">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-100/95 via-gray-100/95 to-slate-100/95 backdrop-blur-sm border-b border-slate-200 shadow-lg">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <img 
-              src="/lovable-uploads/ec5cb8ce-9a6e-4657-ae6d-ddcd09487589.png" 
-              alt="GARAGE PLUS" 
-              className="h-12 w-auto"
-            />
-          </Link>
-          
-          <div className="hidden md:flex items-center space-x-8">
-            <nav className="flex space-x-6">
-              <a href="#services" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">{t.nav.services}</a>
-              <a href="#promotions" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">{t.nav.promotions}</a>
-              <a href="#reviews" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">{t.nav.reviews}</a>
-              <a href="#contact" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">{t.nav.contact}</a>
-              <Link to="/about" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">{t.nav.about}</Link>
-            </nav>
-          </div>
-
-          <div className="flex items-center space-x-4">
-            <div className="text-right">
-              <div className="text-sm text-slate-600 font-medium">Mercedes Benz</div>
-              <div className="text-xs text-slate-500">независимый специалист</div>
-            </div>
-            <div className="w-12 h-8 bg-gradient-to-r from-slate-300 to-gray-300 rounded-lg flex items-center justify-center shadow-md">
-              <div className="w-6 h-6 bg-white rounded-full shadow-inner"></div>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 bg-gradient-to-br from-slate-100 via-gray-100 to-slate-100">
@@ -147,13 +67,13 @@ const Index = () => {
             <div className="space-y-8 animate-fade-in">
               <div className="space-y-4">
                 <h1 className="text-4xl md:text-5xl font-bold leading-tight bg-gradient-to-r from-slate-800 via-gray-800 to-slate-700 bg-clip-text text-transparent">
-                  {t.hero.title}
+                  Обслуживаем по стандартам завода-изготовителя
                 </h1>
                 <p className="text-xl text-slate-700 font-medium">
-                  {t.hero.subtitle}
+                  Только оригинальные запчасти
                 </p>
                 <p className="text-lg text-slate-600">
-                  {t.hero.description}
+                  Профессиональный ремонт и обслуживание Mercedes-Benz W222 с 1999 года
                 </p>
               </div>
               
@@ -163,7 +83,7 @@ const Index = () => {
                   onClick={scrollToContact}
                   className="bg-gradient-to-r from-slate-600 to-gray-600 hover:from-slate-700 hover:to-gray-700 text-white px-8 py-6 text-lg font-medium rounded-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 shadow-lg shadow-slate-300/50"
                 >
-                  {t.hero.bookService}
+                  Записаться на сервис
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
@@ -212,7 +132,7 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {featuresArray.map((feature, index) => (
-              <Card key={feature.key} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white/80 backdrop-blur-sm shadow-slate-200/30 group hover:bg-gradient-to-br hover:from-slate-50 hover:to-gray-50">
+              <Card key={index} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white/80 backdrop-blur-sm shadow-slate-200/30 group hover:bg-gradient-to-br hover:from-slate-50 hover:to-gray-50">
                 <CardHeader className="pb-4">
                   <div className="flex items-center space-x-3 mb-2">
                     <div className="p-2 rounded-lg bg-gradient-to-r from-slate-100 to-gray-100">
@@ -389,7 +309,7 @@ const Index = () => {
             />
             <TestimonialCard 
               name="Елена В."
-              car="Mer Mercedes S 350 W222"
+              car="Mercedes S 350 W222"
               text="Регулярно прохожу ТО в Garage Plus. Всегда довольна результатом и отношением персонала."
               rating={5}
             />
@@ -397,112 +317,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-slate-50 via-gray-50 to-slate-50">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">{t.contact.title}</h2>
-              
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <MapPin className="h-6 w-6 text-gray-600 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-lg">Адрес</h3>
-                    <p className="text-gray-600">{t.contact.address}</p>
-                    <Button 
-                      variant="outline"
-                      className="mt-2 text-slate-700 border-slate-300 hover:bg-slate-50"
-                      onClick={() => window.open('https://yandex.ru/maps/?text=' + encodeURIComponent(t.contact.address), '_blank')}
-                    >
-                      {t.contact.routeButton}
-                    </Button>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <Phone className="h-6 w-6 text-gray-600 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-lg">Телефон</h3>
-                    <p className="text-gray-600">{t.contact.phone}</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <Clock className="h-6 w-6 text-gray-600 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-lg">Режим работы</h3>
-                    <p className="text-gray-600">{t.contact.schedule}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <ContactForm />
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <img 
-                  src="/lovable-uploads/ec5cb8ce-9a6e-4657-ae6d-ddcd09487589.png" 
-                  alt="GARAGE PLUS" 
-                  className="h-10 w-auto brightness-0 invert"
-                />
-              </div>
-              <p className="text-slate-200">
-                Профессиональный ремонт и обслуживание Mercedes-Benz с 1999 года
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-lg mb-4 text-slate-300">Услуги</h3>
-              <ul className="space-y-2 text-slate-200">
-                <li><Link to="/services/maintenance" className="hover:text-slate-100 transition-colors">Техническое обслуживание</Link></li>
-                <li><Link to="/services/transmission" className="hover:text-slate-100 transition-colors">Обслуживание АКПП</Link></li>
-                <li><Link to="/services/engine" className="hover:text-slate-100 transition-colors">Ремонт двигателя</Link></li>
-                <li><Link to="/services/tuning" className="hover:text-slate-100 transition-colors">Тюнинг</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-lg mb-4 text-slate-300">Информация</h3>
-              <ul className="space-y-2 text-slate-200">
-                <li><Link to="/about" className="hover:text-slate-100 transition-colors">О нас</Link></li>
-                <li><a href="#reviews" className="hover:text-slate-100 transition-colors">Отзывы</a></li>
-                <li><a href="#contact" className="hover:text-slate-100 transition-colors">Контакты</a></li>
-                <li><a href="#promotions" className="hover:text-slate-100 transition-colors">Акции</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-lg mb-4 text-slate-300">Контакты</h3>
-              <div className="space-y-2 text-slate-200">
-                <p>{t.contact.address}</p>
-                <p>{t.contact.phone}</p>
-                <p>{t.contact.schedule}</p>
-                <Button 
-                  variant="outline"
-                  size="sm"
-                  className="mt-2 text-white border-white hover:bg-white hover:text-slate-900"
-                  onClick={() => window.open('https://yandex.ru/maps/?text=' + encodeURIComponent(t.contact.address), '_blank')}
-                >
-                  {t.contact.routeButton}
-                </Button>
-              </div>
-            </div>
-          </div>
-          
-          <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-300">
-            <p>&copy; 2024 Garage Plus. Все права защищены.</p>
-          </div>
-        </div>
-      </footer>
+      <ContactSection />
+      <Footer />
     </div>
   );
 };
