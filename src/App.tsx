@@ -12,6 +12,14 @@ import Transmission from "./pages/services/Transmission";
 import Engine from "./pages/services/Engine";
 import Tuning from "./pages/services/Tuning";
 import ServiceDetail from "./pages/services/ServiceDetail";
+import MaintenanceAService from "./pages/services/maintenance/MaintenanceAService";
+import MaintenanceBService from "./pages/services/maintenance/MaintenanceBService";
+import BrakeService from "./pages/services/maintenance/BrakeService";
+import SuspensionService from "./pages/services/maintenance/SuspensionService";
+import SevenGTronicService from "./pages/services/transmission/SevenGTronicService";
+import CleaningService from "./pages/services/engine/CleaningService";
+import EcoDeleteService from "./pages/services/engine/EcoDeleteService";
+import InteriorService from "./pages/services/tuning/InteriorService";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +36,23 @@ const App = () => (
           <Route path="/services/transmission" element={<Transmission />} />
           <Route path="/services/engine" element={<Engine />} />
           <Route path="/services/tuning" element={<Tuning />} />
+          
+          {/* Maintenance services */}
+          <Route path="/services/maintenance/maintenance-a-service" element={<MaintenanceAService />} />
+          <Route path="/services/maintenance/maintenance-b-service" element={<MaintenanceBService />} />
+          <Route path="/services/maintenance/brake-service" element={<BrakeService />} />
+          <Route path="/services/maintenance/suspension-service" element={<SuspensionService />} />
+          
+          {/* Transmission services */}
+          <Route path="/services/transmission/7g-tronic" element={<SevenGTronicService />} />
+          
+          {/* Engine services */}
+          <Route path="/services/engine/cleaning" element={<CleaningService />} />
+          <Route path="/services/engine/eco-delete" element={<EcoDeleteService />} />
+          
+          {/* Tuning services */}
+          <Route path="/services/tuning/interior" element={<InteriorService />} />
+          
           <Route path="/services/:category/:service" element={<ServiceDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
