@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, MapPin, Phone, Clock, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, MapPin, Phone, Clock, Star, ChevronLeft, ChevronRight, Award, Shield, Wrench, Users } from 'lucide-react';
 import { ContactForm } from "@/components/ContactForm";
 import { ServiceCard } from "@/components/ServiceCard";
 import { TestimonialCard } from "@/components/TestimonialCard";
@@ -59,8 +59,9 @@ const Index = () => {
       contact: {
         title: 'Записаться на сервис',
         address: 'г. Москва, ул. Поклонная, 11 стр. 1А',
-        phone: '+7 (495) 123-45-67',
-        schedule: 'Пн-Пт: 9:00-20:00, Сб-Вс: 10:00-18:00'
+        phone: '+7 (495) 221-8480',
+        schedule: 'ПН-ПТ: 11:30-20:30, СБ: 12:00-17:00, ВС: выходной',
+        routeButton: 'Проложить маршрут'
       }
     }
   };
@@ -72,10 +73,30 @@ const Index = () => {
   }
 
   const featuresArray = [
-    { key: 'experience', title: t.features.experience.title, description: t.features.experience.description },
-    { key: 'specialists', title: t.features.specialists.title, description: t.features.specialists.description },
-    { key: 'parts', title: t.features.parts.title, description: t.features.parts.description },
-    { key: 'technology', title: t.features.technology.title, description: t.features.technology.description }
+    { 
+      key: 'experience', 
+      title: t.features.experience.title, 
+      description: t.features.experience.description,
+      icon: Award
+    },
+    { 
+      key: 'specialists', 
+      title: t.features.specialists.title, 
+      description: t.features.specialists.description,
+      icon: Users
+    },
+    { 
+      key: 'parts', 
+      title: t.features.parts.title, 
+      description: t.features.parts.description,
+      icon: Shield
+    },
+    { 
+      key: 'technology', 
+      title: t.features.technology.title, 
+      description: t.features.technology.description,
+      icon: Wrench
+    }
   ];
 
   return (
@@ -84,8 +105,11 @@ const Index = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-100/95 via-gray-100/95 to-slate-100/95 backdrop-blur-sm border-b border-slate-200 shadow-lg">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-slate-700 to-gray-700 bg-clip-text text-transparent">GARAGE</div>
-            <div className="text-2xl font-bold text-slate-400">PLUS</div>
+            <img 
+              src="/lovable-uploads/0e1f2e66-35b1-4036-990c-a2df35a14e71.png" 
+              alt="GARAGE PLUS" 
+              className="h-10"
+            />
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
@@ -183,7 +207,12 @@ const Index = () => {
             {featuresArray.map((feature, index) => (
               <Card key={feature.key} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white/80 backdrop-blur-sm shadow-slate-200/30 group hover:bg-gradient-to-br hover:from-slate-50 hover:to-gray-50">
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-xl text-slate-800 group-hover:text-slate-900 transition-colors duration-300">{feature.title}</CardTitle>
+                  <div className="flex items-center space-x-3 mb-2">
+                    <div className="p-2 rounded-lg bg-gradient-to-r from-slate-100 to-gray-100">
+                      <feature.icon className="h-6 w-6 text-slate-500" />
+                    </div>
+                    <CardTitle className="text-xl text-slate-800 group-hover:text-slate-900 transition-colors duration-300">{feature.title}</CardTitle>
+                  </div>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
@@ -374,6 +403,13 @@ const Index = () => {
                   <div>
                     <h3 className="font-semibold text-lg">Адрес</h3>
                     <p className="text-gray-600">{t.contact.address}</p>
+                    <Button 
+                      variant="outline"
+                      className="mt-2"
+                      onClick={() => window.open('https://yandex.ru/maps/?text=' + encodeURIComponent(t.contact.address), '_blank')}
+                    >
+                      {t.contact.routeButton}
+                    </Button>
                   </div>
                 </div>
                 
@@ -406,8 +442,11 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="text-xl font-bold text-slate-300">GARAGE</div>
-                <div className="text-xl font-bold text-gray-300">PLUS</div>
+                <img 
+                  src="/lovable-uploads/0e1f2e66-35b1-4036-990c-a2df35a14e71.png" 
+                  alt="GARAGE PLUS" 
+                  className="h-8 brightness-0 invert"
+                />
               </div>
               <p className="text-slate-200">
                 Профессиональный ремонт и обслуживание Mercedes-Benz с 1999 года
@@ -440,6 +479,14 @@ const Index = () => {
                 <p>{t.contact.address}</p>
                 <p>{t.contact.phone}</p>
                 <p>{t.contact.schedule}</p>
+                <Button 
+                  variant="outline"
+                  size="sm"
+                  className="mt-2 text-white border-white hover:bg-white hover:text-slate-900"
+                  onClick={() => window.open('https://yandex.ru/maps/?text=' + encodeURIComponent(t.contact.address), '_blank')}
+                >
+                  {t.contact.routeButton}
+                </Button>
               </div>
             </div>
           </div>
@@ -454,4 +501,3 @@ const Index = () => {
 };
 
 export default Index;
-

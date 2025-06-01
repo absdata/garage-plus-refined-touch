@@ -157,6 +157,34 @@ const ServiceDetail = () => {
         pricing: { labor: 'от 150 000 ₽', parts: 'от 200 000 ₽', total: 'от 350 000 ₽' },
         duration: '7-14 дней',
         warranty: '2 года'
+      },
+      'timing-chain': {
+        title: 'Замена цепи ГРМ',
+        shortDescription: 'Замена цепи газораспределительного механизма',
+        fullDescription: 'Замена цепи ГРМ на Mercedes-Benz W222 - сложная операция, требующая специальных инструментов и знаний. Выполняем замену цепи, натяжителей и успокоителей с соблюдением меток.',
+        images: [
+          'https://images.unsplash.com/photo-1486496572940-2bb2341fdbdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        ],
+        videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        problems: [
+          'Шум цепи на холостых оборотах',
+          'Растяжение цепи ГРМ',
+          'Ошибки системы управления двигателем',
+          'Снижение мощности',
+          'Неустойчивая работа двигателя'
+        ],
+        process: [
+          'Диагностика состояния цепи ГРМ',
+          'Демонтаж навесного оборудования',
+          'Установка меток ГРМ',
+          'Замена цепи и натяжителей',
+          'Сборка в обратной последовательности',
+          'Проверка работы двигателя'
+        ],
+        pricing: { labor: 'от 45 000 ₽', parts: 'от 25 000 ₽', total: 'от 70 000 ₽' },
+        duration: '2-3 дня',
+        warranty: '1 год'
       }
     },
     'tuning': {
@@ -185,6 +213,33 @@ const ServiceDetail = () => {
         ],
         pricing: { labor: 'от 80 000 ₽', parts: 'от 250 000 ₽', total: 'от 330 000 ₽' },
         duration: '5-7 дней',
+        warranty: '1 год'
+      },
+      'wheels': {
+        title: 'Колесные диски AMG',
+        shortDescription: 'Оригинальные диски AMG различных размеров',
+        fullDescription: 'Установка оригинальных колесных дисков AMG на Mercedes-Benz W222. Предлагаем широкий выбор дизайнов и размеров от 19 до 21 дюйма.',
+        images: [
+          'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        ],
+        videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        problems: [
+          'Стандартные диски не подчеркивают статус автомобиля',
+          'Желание улучшить внешний вид',
+          'Необходимость в более широких шинах',
+          'Повышение управляемости'
+        ],
+        process: [
+          'Подбор дисков по размеру и дизайну',
+          'Заказ оригинальных дисков AMG',
+          'Демонтаж старых дисков',
+          'Установка новых дисков и шин',
+          'Балансировка колес',
+          'Настройка давления в шинах'
+        ],
+        pricing: { labor: 'от 8 000 ₽', parts: 'от 120 000 ₽', total: 'от 128 000 ₽' },
+        duration: '1 день',
         warranty: '1 год'
       }
     }
@@ -224,9 +279,17 @@ const ServiceDetail = () => {
             <span>Назад к услугам</span>
           </Link>
           <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-slate-600 to-gray-600 bg-clip-text text-transparent">GARAGE</div>
-            <div className="text-2xl font-bold text-slate-400">PLUS</div>
+            <img 
+              src="/lovable-uploads/0e1f2e66-35b1-4036-990c-a2df35a14e71.png" 
+              alt="GARAGE PLUS" 
+              className="h-10"
+            />
           </Link>
+          <div className="hidden md:flex items-center space-x-6">
+            <Link to="/#services" className="text-slate-700 hover:text-slate-900 transition-colors">Услуги</Link>
+            <Link to="/#contact" className="text-slate-700 hover:text-slate-900 transition-colors">Контакты</Link>
+            <Link to="/#reviews" className="text-slate-700 hover:text-slate-900 transition-colors">Отзывы</Link>
+          </div>
         </div>
       </header>
 
@@ -441,15 +504,18 @@ const ServiceDetail = () => {
             {/* About */}
             <div>
               <div className="flex items-center space-x-2 mb-6">
-                <div className="text-2xl font-bold">GARAGE</div>
-                <div className="text-2xl font-bold text-slate-400">PLUS</div>
+                <img 
+                  src="/lovable-uploads/0e1f2e66-35b1-4036-990c-a2df35a14e71.png" 
+                  alt="GARAGE PLUS" 
+                  className="h-8 brightness-0 invert"
+                />
               </div>
               <p className="text-slate-300 leading-relaxed mb-4">
                 Специализированный сервис по обслуживанию и ремонту автомобилей Mercedes-Benz S-Class W222.
               </p>
               <div className="flex items-center space-x-2 text-slate-300">
                 <MapPin className="h-4 w-4" />
-                <span>Москва, ул. Автомобильная, 15</span>
+                <span>г. Москва, ул. Поклонная, 11 стр. 1А</span>
               </div>
             </div>
 
@@ -470,7 +536,7 @@ const ServiceDetail = () => {
               <ul className="space-y-3">
                 <li className="flex items-center space-x-2">
                   <Phone className="h-4 w-4 text-slate-400" />
-                  <span className="text-slate-300">+7 (495) 123-45-67</span>
+                  <span className="text-slate-300">+7 (495) 221-8480</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <Mail className="h-4 w-4 text-slate-400" />
@@ -478,7 +544,7 @@ const ServiceDetail = () => {
                 </li>
                 <li className="flex items-center space-x-2">
                   <Clock className="h-4 w-4 text-slate-400" />
-                  <span className="text-slate-300">Пн-Пт: 9:00-20:00</span>
+                  <span className="text-slate-300">ПН-ПТ: 11:30-20:30</span>
                 </li>
               </ul>
             </div>
@@ -487,10 +553,18 @@ const ServiceDetail = () => {
             <div>
               <h3 className="text-lg font-semibold mb-6">Время работы</h3>
               <ul className="space-y-3 text-slate-300">
-                <li>Понедельник - Пятница: 9:00-20:00</li>
-                <li>Суббота: 10:00-18:00</li>
+                <li>Понедельник - Пятница: 11:30-20:30</li>
+                <li>Суббота: 12:00-17:00</li>
                 <li>Воскресенье: выходной</li>
               </ul>
+              <Button 
+                variant="outline"
+                size="sm"
+                className="mt-4 text-white border-white hover:bg-white hover:text-slate-900"
+                onClick={() => window.open('https://yandex.ru/maps/?text=' + encodeURIComponent('г. Москва, ул. Поклонная, 11 стр. 1А'), '_blank')}
+              >
+                Проложить маршрут
+              </Button>
             </div>
           </div>
 
