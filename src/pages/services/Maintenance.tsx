@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -44,7 +43,7 @@ const Maintenance = () => {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/ec5cb8ce-9a6e-4657-ae6d-ddcd09487589.png" 
+              src="/logo.png" 
               alt="GARAGE PLUS" 
               className="h-12 w-auto"
             />
@@ -167,9 +166,9 @@ const Maintenance = () => {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <img 
-                  src="/lovable-uploads/ec5cb8ce-9a6e-4657-ae6d-ddcd09487589.png" 
+                  src="/logo.png" 
                   alt="GARAGE PLUS" 
-                  className="h-10 w-auto brightness-0 invert"
+                  className="h-10 w-auto"
                 />
               </div>
               <p className="text-slate-200">

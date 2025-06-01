@@ -73,7 +73,7 @@ const Index = () => {
                   Только оригинальные запчасти
                 </p>
                 <p className="text-lg text-slate-600">
-                  Профессиональный ремонт и обслуживание Mercedes-Benz W222 с 1999 года
+                  Профессиональный ремонт и обслуживание Mercedes-Benz с 1999 года
                 </p>
               </div>
               
@@ -90,9 +90,9 @@ const Index = () => {
             </div>
             
             <div className="relative animate-fade-in">
-              <div className="aspect-[4/3] bg-gradient-to-br from-slate-200 via-gray-200 to-slate-200 rounded-3xl overflow-hidden shadow-2xl shadow-slate-300/30">
+              <div className="aspect-[5/3] bg-gradient-to-br from-slate-200 via-gray-200 to-slate-200 rounded-3xl overflow-hidden shadow-2xl shadow-slate-300/30">
                 <img 
-                  src="mercedes-benz-s-class-w222-3705.jpg"
+                  src="/mercedes_w222.jpg"
                   alt="Mercedes-Benz W222"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />

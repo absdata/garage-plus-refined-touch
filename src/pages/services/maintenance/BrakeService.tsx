@@ -20,7 +20,7 @@ const BrakeService = () => {
     fullDescription: 'Полное обслуживание тормозной системы включает замену тормозных колодок, дисков, проверку тормозной жидкости, диагностику тормозных магистралей и электронных систем помощи при торможении.',
     images: [
       'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1486496572940-2bb2341fdbdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1486496572940-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     ],
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
@@ -56,7 +56,7 @@ const BrakeService = () => {
           </Link>
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/ec5cb8ce-9a6e-4657-ae6d-ddcd09487589.png" 
+              src="/logo.png" 
               alt="GARAGE PLUS" 
               className="h-12 w-auto"
             />
@@ -264,9 +264,9 @@ const BrakeService = () => {
             <div>
               <div className="flex items-center space-x-2 mb-6">
                 <img 
-                  src="/lovable-uploads/ec5cb8ce-9a6e-4657-ae6d-ddcd09487589.png" 
+                  src="/logo.png" 
                   alt="GARAGE PLUS" 
-                  className="h-10 w-auto brightness-0 invert"
+                  className="h-10 w-auto"
                 />
               </div>
               <p className="text-slate-300 leading-relaxed mb-4">

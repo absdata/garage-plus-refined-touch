@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -280,7 +279,7 @@ const ServiceDetail = () => {
           </Link>
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/0e1f2e66-35b1-4036-990c-a2df35a14e71.png" 
+              src="/logo.png" 
               alt="GARAGE PLUS" 
               className="h-10"
             />
@@ -505,9 +504,9 @@ const ServiceDetail = () => {
             <div>
               <div className="flex items-center space-x-2 mb-6">
                 <img 
-                  src="/lovable-uploads/0e1f2e66-35b1-4036-990c-a2df35a14e71.png" 
+                  src="/logo.png" 
                   alt="GARAGE PLUS" 
-                  className="h-8 brightness-0 invert"
+                  className="h-8"
                 />
               </div>
               <p className="text-slate-300 leading-relaxed mb-4">

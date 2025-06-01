@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -56,7 +55,7 @@ const MaintenanceAService = () => {
           </Link>
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/ec5cb8ce-9a6e-4657-ae6d-ddcd09487589.png" 
+              src="/logo.png" 
               alt="GARAGE PLUS" 
               className="h-12 w-auto"
             />
@@ -260,9 +259,9 @@ const MaintenanceAService = () => {
             <div>
               <div className="flex items-center space-x-2 mb-6">
                 <img 
-                  src="/lovable-uploads/ec5cb8ce-9a6e-4657-ae6d-ddcd09487589.png" 
+                  src="/logo.png" 
                   alt="GARAGE PLUS" 
-                  className="h-10 w-auto brightness-0 invert"
+                  className="h-10 w-auto"
                 />
               </div>
               <p className="text-slate-300 leading-relaxed mb-4">

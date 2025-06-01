@@ -8,7 +8,7 @@ export const Header = () => {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
           <img 
-            src="/lovable-uploads/ec5cb8ce-9a6e-4657-ae6d-ddcd09487589.png" 
+            src="/logo.png" 
             alt="GARAGE PLUS" 
             className="h-12 w-auto"
           />

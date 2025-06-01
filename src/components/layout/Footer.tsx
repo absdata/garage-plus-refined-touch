@@ -11,9 +11,9 @@ export const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <img 
-                src="/lovable-uploads/ec5cb8ce-9a6e-4657-ae6d-ddcd09487589.png" 
+                src="logo.png" 
                 alt="GARAGE PLUS" 
-                className="h-10 w-auto brightness-0 invert"
+                className="h-10 w-auto"
               />
             </div>
             <p className="text-slate-200">
@@ -50,7 +50,7 @@ export const Footer = () => {
               <Button 
                 variant="outline"
                 size="sm"
-                className="mt-2 text-white border-white hover:bg-white hover:text-slate-900"
+                className="mt-2 border-white text-slate-900"
                 onClick={() => window.open('https://yandex.ru/maps/?text=' + encodeURIComponent('г. Москва, ул. Поклонная, 11 стр. 1А'), '_blank')}
               >
                 Проложить маршрут
@@ -60,7 +60,7 @@ export const Footer = () => {
         </div>
         
         <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-300">
-          <p>&copy; 2024 Garage Plus. Все права защищены.</p>
+          <p>&copy; 2024 GARAGE PLUS. Все права защищены.</p>
         </div>
       </div>
     </footer>

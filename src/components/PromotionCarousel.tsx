@@ -32,14 +32,6 @@ export const PromotionCarousel = () => {
       originalPrice: '2 500 ₽',
       deadline: 'Постоянная акция',
       badge: 'Подарок'
-    },
-    {
-      title: 'Замена масла АКПП',
-      description: 'Полная замена масла с промывкой системы',
-      price: '5 900 ₽',
-      originalPrice: '7 500 ₽',
-      deadline: 'Ограниченное предложение',
-      badge: 'Выгодно'
     }
   ];
 
@@ -117,18 +109,6 @@ export const PromotionCarousel = () => {
               </Button>
             </CardContent>
           </Card>
-        ))}
-      </div>
-
-      <div className="flex justify-center mt-8 space-x-2">
-        {promotions.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-colors ${
-              index === currentSlide ? 'bg-gray-900' : 'bg-gray-300'
-            }`}
-          />
         ))}
       </div>
     </div>
