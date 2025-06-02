@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 
 const scrollToTop = () => {
@@ -10,33 +10,39 @@ const scrollToTop = () => {
 };
 
 export const Footer = () => {
+  const location = useLocation();
+  
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const target = e.currentTarget as HTMLAnchorElement;
+    const isHashLink = target.hash && target.getAttribute('href')?.startsWith('/#');
     
-    // For hash links (like #reviews, #contact)
-    if (target.hash) {
+    // For hash links to main page
+    if (isHashLink) {
       e.preventDefault();
-      scrollToTop();
+      const hash = target.hash;
       
-      // Scroll to the target element after a small delay
-      setTimeout(() => {
-        const id = target.hash.substring(1);
+      // If already on main page, just scroll to section
+      if (window.location.pathname === '/') {
+        const id = hash.substring(1);
         const element = document.getElementById(id);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
-          // Update URL without triggering navigation
-          window.history.pushState({}, '', target.hash);
+          window.history.pushState({}, '', hash);
         }
-      }, 100);
-    } 
-    // For same-page navigation (like /about on the about page)
-    else if (target.getAttribute('href') === window.location.pathname) {
-      e.preventDefault();
-      scrollToTop();
-      // Update URL without triggering navigation
-      window.history.pushState({}, '', target.getAttribute('href'));
+      } else {
+        // If not on main page, navigate there with hash
+        window.location.href = `/${hash}`;
+      }
+      return;
     }
-    // For other links, let the default behavior handle the navigation
+
+    // For regular links, scroll to top then navigate
+    e.preventDefault();
+    scrollToTop().then(() => {
+      if (target.href) {
+        window.location.href = target.href;
+      }
+    });
   };
 
   return (
@@ -59,20 +65,20 @@ export const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4 text-slate-300">Услуги</h3>
             <ul className="space-y-2 text-slate-200">
-              <li><Link to="/services/maintenance" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Техническое обслуживание</Link></li>
-              <li><Link to="/services/transmission" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Обслуживание АКПП</Link></li>
-              <li><Link to="/services/engine" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Ремонт двигателя</Link></li>
-              <li><Link to="/services/tuning" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Тюнинг</Link></li>
+              <li><Link to="/services/maintenance" className="hover:text-slate-100 transition-colors" onClick={() => scrollToTop()}>Техническое обслуживание</Link></li>
+              <li><Link to="/services/transmission" className="hover:text-slate-100 transition-colors" onClick={() => scrollToTop()}>Обслуживание АКПП</Link></li>
+              <li><Link to="/services/engine" className="hover:text-slate-100 transition-colors" onClick={() => scrollToTop()}>Ремонт двигателя</Link></li>
+              <li><Link to="/services/tuning" className="hover:text-slate-100 transition-colors" onClick={() => scrollToTop()}>Тюнинг</Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-semibold text-lg mb-4 text-slate-300">Информация</h3>
             <ul className="space-y-2 text-slate-200">
-              <li><Link to="/about" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>О нас</Link></li>
-              <li><a href="#reviews" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Отзывы</a></li>
-              <li><a href="#contact" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Контакты</a></li>
-              <li><a href="#promotions" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Акции</a></li>
+              <li><Link to="/about" className="hover:text-slate-100 transition-colors" onClick={() => scrollToTop()}>О нас</Link></li>
+              <li><Link to="/#reviews" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Отзывы</Link></li>
+              <li><Link to="/#contact" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Контакты</Link></li>
+              <li><Link to="/#promotions" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Акции</Link></li>
             </ul>
           </div>
           
