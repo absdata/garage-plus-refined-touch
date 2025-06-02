@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export interface ServiceHeroProps {
   title: string;
@@ -11,6 +10,20 @@ export interface ServiceHeroProps {
 }
 
 export const ServiceHero = ({ title, subtitle, description, price, duration, image }: ServiceHeroProps) => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [imageDimensions, setImageDimensions] = useState({ width: 800, height: 600 });
+
+  // Extract width and height from image URL if available (e.g., image-800x600.jpg)
+  useEffect(() => {
+    const match = image.match(/(\d+)x(\d+)\.\w+$/);
+    if (match) {
+      setImageDimensions({
+        width: parseInt(match[1], 10),
+        height: parseInt(match[2], 10)
+      });
+    }
+  }, [image]);
+
   return (
     <section className="py-16 bg-gradient-to-br from-slate-100 via-gray-100 to-slate-100">
       <div className="container mx-auto px-4">
@@ -36,11 +49,27 @@ export const ServiceHero = ({ title, subtitle, description, price, duration, ima
               )}
             </div>
           </div>
-          <div className="aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl">
+            <div 
+              className={`absolute inset-0 transition-opacity duration-500 ${
+                isImageLoaded ? 'opacity-0' : 'opacity-100'
+              }`}
+              style={{
+                background: 'linear-gradient(90deg, #f1f5f9 0%, #e2e8f0 50%, #f1f5f9 100%)',
+                backgroundSize: '200% 100%',
+                animation: 'shimmer 2s infinite',
+              }}
+            />
             <img 
               src={image} 
               alt={title}
-              className="w-full h-full object-cover"
+              className={`w-full h-full object-cover transition-opacity duration-500 ${
+                isImageLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+              loading="eager"
+              width={imageDimensions.width}
+              height={imageDimensions.height}
+              onLoad={() => setIsImageLoaded(true)}
             />
           </div>
         </div>

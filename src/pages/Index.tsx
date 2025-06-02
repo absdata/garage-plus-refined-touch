@@ -111,6 +111,15 @@ const Index = () => {
                   src="/mercedes_w222.jpg"
                   alt="Mercedes-Benz W222"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  loading="eager"
+                  width={800}
+                  height={480}
+                  style={{
+                    backgroundColor: '#f1f5f9',
+                    backgroundImage: 'linear-gradient(to right, #f1f5f9, #e2e8f0, #f1f5f9)',
+                    backgroundSize: '200% 100%',
+                    animation: 'shimmer 2s infinite',
+                  }}
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl shadow-slate-200/50">
