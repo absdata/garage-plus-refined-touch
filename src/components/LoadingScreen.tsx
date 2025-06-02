@@ -9,7 +9,7 @@ export const LoadingScreen = () => {
         
         {/* Logo with proper proportions */}
         <div className="absolute inset-0 flex items-center justify-center p-0">
-          <div className="w-1/2 h-auto aspect-square flex items-center justify-center">
+          <div className="w-4/5 h-auto aspect-square flex items-center justify-center">
             <img 
               src="/logo.png" 
               alt="GARAGE PLUS" 
