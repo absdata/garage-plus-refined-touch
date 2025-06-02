@@ -141,17 +141,17 @@ const Index = () => {
             <img 
               src="/mb.svg" 
               alt="Mercedes-Benz" 
-              className="h-2 md:h-4 opacity-60 hover:opacity-80 transition-opacity flex-shrink-0"
+              className="h-3 md:h-4 opacity-60 hover:opacity-80 transition-opacity flex-shrink-0"
             />
             <img 
               src="/amg.svg" 
               alt="AMG" 
-              className="h-2 md:h-4 opacity-60 hover:opacity-80 transition-opacity flex-shrink-0"
+              className="h-3 md:h-4 opacity-60 hover:opacity-80 transition-opacity flex-shrink-0"
             />
             <img 
               src="mbh.svg" 
               alt="MAYBACH" 
-              className="h-2 md:h-4 opacity-60 hover:opacity-80 transition-opacity flex-shrink-0"
+              className="h-3 md:h-4 opacity-60 hover:opacity-80 transition-opacity flex-shrink-0"
             />
           </div>
         </div>
