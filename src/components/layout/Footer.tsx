@@ -1,9 +1,23 @@
-
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
+
 export const Footer = () => {
+  const location = useLocation();
+  
+  const handleLinkClick = () => {
+    if (location.pathname === window.location.pathname) {
+      scrollToTop();
+    }
+  };
+
   return (
     <footer className="bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 text-white py-12">
       <div className="container mx-auto px-4">
@@ -24,20 +38,20 @@ export const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4 text-slate-300">Услуги</h3>
             <ul className="space-y-2 text-slate-200">
-              <li><Link to="/services/maintenance" className="hover:text-slate-100 transition-colors">Техническое обслуживание</Link></li>
-              <li><Link to="/services/transmission" className="hover:text-slate-100 transition-colors">Обслуживание АКПП</Link></li>
-              <li><Link to="/services/engine" className="hover:text-slate-100 transition-colors">Ремонт двигателя</Link></li>
-              <li><Link to="/services/tuning" className="hover:text-slate-100 transition-colors">Тюнинг</Link></li>
+              <li><Link to="/services/maintenance" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Техническое обслуживание</Link></li>
+              <li><Link to="/services/transmission" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Обслуживание АКПП</Link></li>
+              <li><Link to="/services/engine" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Ремонт двигателя</Link></li>
+              <li><Link to="/services/tuning" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Тюнинг</Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-semibold text-lg mb-4 text-slate-300">Информация</h3>
             <ul className="space-y-2 text-slate-200">
-              <li><Link to="/about" className="hover:text-slate-100 transition-colors">О нас</Link></li>
-              <li><a href="/#reviews" className="hover:text-slate-100 transition-colors">Отзывы</a></li>
-              <li><a href="/#contact" className="hover:text-slate-100 transition-colors">Контакты</a></li>
-              <li><a href="/#promotions" className="hover:text-slate-100 transition-colors">Акции</a></li>
+              <li><Link to="/about" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>О нас</Link></li>
+              <li><a href="#reviews" className="hover:text-slate-100 transition-colors" onClick={scrollToTop}>Отзывы</a></li>
+              <li><a href="#contact" className="hover:text-slate-100 transition-colors" onClick={scrollToTop}>Контакты</a></li>
+              <li><a href="#promotions" className="hover:text-slate-100 transition-colors" onClick={scrollToTop}>Акции</a></li>
             </ul>
           </div>
           
