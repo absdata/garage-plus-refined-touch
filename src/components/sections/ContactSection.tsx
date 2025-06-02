@@ -1,52 +1,61 @@
 
 import React from 'react';
-import { ContactForm } from "@/components/ContactForm";
-import { MapPin, Phone, Clock } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Phone, MapPin, Clock } from 'lucide-react';
 
 export const ContactSection = () => {
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-slate-50 via-gray-50 to-slate-50">
+    <section className="py-16 bg-gradient-to-br from-slate-100 via-gray-100 to-slate-100">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">Записаться на сервис</h2>
-            
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <MapPin className="h-6 w-6 text-gray-600 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-lg">Адрес</h3>
-                  <p className="text-gray-600">г. Москва, ул. Поклонная, 11 стр. 1А</p>
-                  <Button 
-                    variant="outline"
-                    className="mt-2 text-slate-700 border-slate-300 hover:bg-slate-50"
-                    onClick={() => window.open('https://yandex.ru/maps/?text=' + encodeURIComponent('г. Москва, ул. Поклонная, 11 стр. 1А'), '_blank')}
-                  >
-                    Проложить маршрут
-                  </Button>
-                </div>
+        <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Свяжитесь с нами</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card className="border-0 shadow-lg bg-white/90 backdrop-blur-sm rounded-2xl">
+            <CardHeader className="text-center">
+              <Phone className="h-12 w-12 text-slate-600 mx-auto mb-4" />
+              <CardTitle className="text-slate-800">Телефон</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center">
+              <p className="text-slate-700 mb-4">+7 (495) 221-8480</p>
+              <Button 
+                className="bg-gradient-to-r from-slate-600 to-gray-600 hover:from-slate-700 hover:to-gray-700 text-white"
+                onClick={() => window.open('tel:+74952218480')}
+              >
+                Позвонить
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="border-0 shadow-lg bg-white/90 backdrop-blur-sm rounded-2xl">
+            <CardHeader className="text-center">
+              <MapPin className="h-12 w-12 text-slate-600 mx-auto mb-4" />
+              <CardTitle className="text-slate-800">Адрес</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center">
+              <p className="text-slate-700 mb-4">г. Москва, ул. Поклонная, 11 стр. 1А</p>
+              <Button 
+                variant="outline"
+                className="border-slate-300 text-slate-700 hover:bg-slate-50"
+                onClick={() => window.open('https://yandex.ru/maps/?text=' + encodeURIComponent('г. Москва, ул. Поклонная, 11 стр. 1А'), '_blank')}
+              >
+                Проложить маршрут
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="border-0 shadow-lg bg-white/90 backdrop-blur-sm rounded-2xl">
+            <CardHeader className="text-center">
+              <Clock className="h-12 w-12 text-slate-600 mx-auto mb-4" />
+              <CardTitle className="text-slate-800">Режим работы</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center">
+              <div className="text-slate-700 space-y-1">
+                <p>ПН-ПТ: 11:30-20:30</p>
+                <p>СБ: 12:00-17:00</p>
+                <p>ВС: выходной</p>
               </div>
-              
-              <div className="flex items-start space-x-4">
-                <Phone className="h-6 w-6 text-gray-600 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-lg">Телефон</h3>
-                  <p className="text-gray-600">+7 (495) 221-8480</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <Clock className="h-6 w-6 text-gray-600 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-lg">Режим работы</h3>
-                  <p className="text-gray-600">ПН-ПТ: 11:30-20:30<br />СБ: 12:00-17:00<br />ВС: выходной</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <ContactForm />
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
