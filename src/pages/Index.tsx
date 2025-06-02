@@ -27,27 +27,43 @@ const Index = () => {
   }
 
   const featuresArray = [
-    { 
-      title: '25 лет с Mercedes-Benz', 
-      description: 'Мы обслуживаем автомобили Mercedes с 1999 года. Опыт, проверенный временем.',
-      icon: Award
+    {
+      title: 'Профессиональный ремонт с 1999 года',
+      description: 'Обслуживаем автомобили Mercedes-Benz уже более 25 лет. Опыт, проверенный временем.',
+      icon: Award,
     },
-    { 
-      title: 'Сертифицированные специалисты', 
-      description: 'Наши мастера прошли обучение в «Мерседес-Бенц РУС» и имеют опыт работы в дилерских центрах.',
-      icon: Users
+    {
+      title: 'Сертифицированные специалисты',
+      description:
+        'Наши мастера имеют многолетний опыт работы в дилерских центрах Mercedes-Benz и прошли обучение в "Мерседес-Бенц РУС" с подтверждёнными сертификатами.',
+      icon: Users,
     },
-    { 
-      title: 'Оригинальные запчасти', 
-      description: 'Прямые поставки со складов в ОАЭ. Качество и надёжность без компромиссов.',
-      icon: Shield
+    {
+      title: 'Оригинальные запчасти или качественные аналоги',
+      description:
+        'Используем оригинальные детали Mercedes-Benz или качественные аналоги от официальных поставщиков. Никогда не применяем подделки или запчасти ненадлежащего качества.',
+      icon: Shield,
     },
-    { 
-      title: 'Технологии Mercedes-Benz', 
-      description: 'Все работы выполняются строго по технологиям завода-изготовителя. Никакой самодеятельности.',
-      icon: Wrench
-    }
+    {
+      title: 'Технологии Mercedes-Benz',
+      description:
+        'Все работы выполняются по технологии завода Mercedes-Benz с применением официальных сервисных программ EPC, WIS и ASRA.',
+      icon: Wrench,
+    },
+    {
+      title: 'Удобное расположение',
+      description:
+        'Сервис находится в 1,5 км от Москва-Сити и рядом с Поклонной горой — удобно добираться из любого района Москвы.',
+      icon: Star,
+    },
+    {
+      title: 'Быстрая доставка запчастей',
+      description:
+        'Благодаря отлаженной логистике и прямым поставкам мы минимизируем сроки ремонта вашего автомобиля.',
+      icon: ArrowRight,
+    },
   ];
+  
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
@@ -142,7 +158,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuresArray.map((feature, index) => (
               <Card key={index} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white/80 backdrop-blur-sm shadow-slate-200/30 group hover:bg-gradient-to-br hover:from-slate-50 hover:to-gray-50">
                 <CardHeader className="pb-4">
