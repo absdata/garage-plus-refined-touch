@@ -30,7 +30,7 @@ export const Header = () => {
             <div className="text-xs text-slate-500">независимый специалист</div>
           </div>
           <img 
-            src="/lovable-uploads/9c0805c4-26b6-4d9f-b182-0e49c5b80867.png" 
+            src="/logo_m.png" 
             alt="Mercedes Benz - независимый специалист"
             title="Mercedes Benz - независимый специалист"
             className="h-12 w-auto"
