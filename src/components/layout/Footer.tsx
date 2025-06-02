@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 
 const scrollToTop = () => {
@@ -10,12 +10,33 @@ const scrollToTop = () => {
 };
 
 export const Footer = () => {
-  const location = useLocation();
-  
-  const handleLinkClick = () => {
-    if (location.pathname === window.location.pathname) {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const target = e.currentTarget as HTMLAnchorElement;
+    
+    // For hash links (like #reviews, #contact)
+    if (target.hash) {
+      e.preventDefault();
       scrollToTop();
+      
+      // Scroll to the target element after a small delay
+      setTimeout(() => {
+        const id = target.hash.substring(1);
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          // Update URL without triggering navigation
+          window.history.pushState({}, '', target.hash);
+        }
+      }, 100);
+    } 
+    // For same-page navigation (like /about on the about page)
+    else if (target.getAttribute('href') === window.location.pathname) {
+      e.preventDefault();
+      scrollToTop();
+      // Update URL without triggering navigation
+      window.history.pushState({}, '', target.getAttribute('href'));
     }
+    // For other links, let the default behavior handle the navigation
   };
 
   return (
@@ -49,9 +70,9 @@ export const Footer = () => {
             <h3 className="font-semibold text-lg mb-4 text-slate-300">Информация</h3>
             <ul className="space-y-2 text-slate-200">
               <li><Link to="/about" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>О нас</Link></li>
-              <li><a href="#reviews" className="hover:text-slate-100 transition-colors" onClick={scrollToTop}>Отзывы</a></li>
-              <li><a href="#contact" className="hover:text-slate-100 transition-colors" onClick={scrollToTop}>Контакты</a></li>
-              <li><a href="#promotions" className="hover:text-slate-100 transition-colors" onClick={scrollToTop}>Акции</a></li>
+              <li><a href="#reviews" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Отзывы</a></li>
+              <li><a href="#contact" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Контакты</a></li>
+              <li><a href="#promotions" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Акции</a></li>
             </ul>
           </div>
           
