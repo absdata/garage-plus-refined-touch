@@ -26,7 +26,9 @@ export const Footer = () => {
         const id = hash.substring(1);
         const element = document.getElementById(id);
         if (element) {
+          // Smooth scroll to the element
           element.scrollIntoView({ behavior: 'smooth' });
+          // Update URL without triggering navigation
           window.history.pushState({}, '', hash);
         }
       } else {
