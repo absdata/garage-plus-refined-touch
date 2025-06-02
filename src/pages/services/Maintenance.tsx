@@ -1,7 +1,9 @@
+
 import React from 'react';
+import { ServiceLayout } from '@/components/layout/ServiceLayout';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Maintenance = () => {
@@ -37,56 +39,10 @@ const Maintenance = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 text-gray-900">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-100/95 via-gray-100/95 to-slate-100/95 backdrop-blur-sm border-b border-slate-200 shadow-lg">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <img 
-              src="/logo.png" 
-              alt="GARAGE PLUS" 
-              className="h-12 w-auto"
-            />
-          </Link>
-          
-          <div className="hidden md:flex items-center space-x-8">
-            <nav className="flex space-x-6">
-              <Link to="/#services" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105 font-semibold">Услуги</Link>
-              <Link to="/#promotions" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">Акции</Link>
-              <Link to="/#reviews" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">Отзывы</Link>
-              <Link to="/#contact" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">Контакты</Link>
-              <Link to="/about" className="text-slate-700 hover:text-slate-900 transition-all duration-300 hover:scale-105">О нас</Link>
-            </nav>
-          </div>
-
-          <div className="flex items-center space-x-4">
-            <div className="text-right">
-              <div className="text-sm text-slate-600 font-medium">Mercedes Benz</div>
-              <div className="text-xs text-slate-500">независимый специалист</div>
-            </div>
-            <div className="w-12 h-8 bg-gradient-to-r from-slate-300 to-gray-300 rounded-lg flex items-center justify-center shadow-md">
-              <div className="w-6 h-6 bg-white rounded-full shadow-inner"></div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Breadcrumbs */}
-      <section className="pt-24 pb-8 px-4">
-        <div className="container mx-auto">
-          <div className="flex items-center space-x-2 text-slate-600">
-            <Link to="/" className="hover:text-slate-900 transition-colors">Главная</Link>
-            <span>/</span>
-            <Link to="/#services" className="hover:text-slate-900 transition-colors">Услуги</Link>
-            <span>/</span>
-            <span className="text-slate-900 font-medium">ТО и Ремонт</span>
-          </div>
-        </div>
-      </section>
-
+    <ServiceLayout>
       {/* Hero Section */}
-      <section className="pb-16 px-4">
-        <div className="container mx-auto">
+      <section className="py-16 bg-gradient-to-br from-slate-100 via-gray-100 to-slate-100">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-800 via-gray-800 to-slate-700 bg-clip-text text-transparent">
               Техническое обслуживание и ремонт
@@ -142,84 +98,7 @@ const Maintenance = () => {
           </div>
         </div>
       </section>
-
-      {/* Back to Home */}
-      <section className="pb-20 px-4">
-        <div className="container mx-auto text-center">
-          <Link to="/">
-            <Button 
-              variant="outline"
-              size="lg"
-              className="text-slate-700 border-slate-300 hover:bg-slate-50"
-            >
-              <ArrowLeft className="mr-2 h-5 w-5" />
-              Вернуться на главную
-            </Button>
-          </Link>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <img 
-                  src="/logo.png" 
-                  alt="GARAGE PLUS" 
-                  className="h-10 w-auto"
-                />
-              </div>
-              <p className="text-slate-200">
-                Профессиональный ремонт и обслуживание Mercedes-Benz с 1999 года
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-lg mb-4 text-slate-300">Услуги</h3>
-              <ul className="space-y-2 text-slate-200">
-                <li><Link to="/services/maintenance" className="hover:text-slate-100 transition-colors">Техническое обслуживание</Link></li>
-                <li><Link to="/services/transmission" className="hover:text-slate-100 transition-colors">Обслуживание АКПП</Link></li>
-                <li><Link to="/services/engine" className="hover:text-slate-100 transition-colors">Ремонт двигателя</Link></li>
-                <li><Link to="/services/tuning" className="hover:text-slate-100 transition-colors">Тюнинг</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-lg mb-4 text-slate-300">Информация</h3>
-              <ul className="space-y-2 text-slate-200">
-                <li><Link to="/about" className="hover:text-slate-100 transition-colors">О нас</Link></li>
-                <li><Link to="/#reviews" className="hover:text-slate-100 transition-colors">Отзывы</Link></li>
-                <li><Link to="/#contact" className="hover:text-slate-100 transition-colors">Контакты</Link></li>
-                <li><Link to="/#promotions" className="hover:text-slate-100 transition-colors">Акции</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-lg mb-4 text-slate-300">Контакты</h3>
-              <div className="space-y-2 text-slate-200">
-                <p>г. Москва, ул. Поклонная, 11 стр. 1А</p>
-                <p>+7 (495) 221-8480</p>
-                <p>ПН-ПТ: 11:30-20:30, СБ: 12:00-17:00, ВС: выходной</p>
-                <Button 
-                  variant="outline"
-                  size="sm"
-                  className="mt-2 text-white border-white hover:bg-white hover:text-slate-900"
-                  onClick={() => window.open('https://yandex.ru/maps/?text=' + encodeURIComponent('г. Москва, ул. Поклонная, 11 стр. 1А'), '_blank')}
-                >
-                  Проложить маршрут
-                </Button>
-              </div>
-            </div>
-          </div>
-          
-          <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-300">
-            <p>&copy; 2024 Garage Plus. Все права защищены.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </ServiceLayout>
   );
 };
 
