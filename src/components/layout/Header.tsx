@@ -25,10 +25,6 @@ export const Header = () => {
         </div>
 
         <div className="flex items-center space-x-4">
-          <div className="text-right">
-            <div className="text-sm text-slate-600 font-medium">Mercedes Benz</div>
-            <div className="text-xs text-slate-500">независимый специалист</div>
-          </div>
           <img 
             src="/logo_m.png" 
             alt="Mercedes Benz - независимый специалист"
