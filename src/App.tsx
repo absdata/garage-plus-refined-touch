@@ -17,9 +17,16 @@ import MaintenanceBService from "./pages/services/maintenance/MaintenanceBServic
 import BrakeService from "./pages/services/maintenance/BrakeService";
 import SuspensionService from "./pages/services/maintenance/SuspensionService";
 import SevenGTronicService from "./pages/services/transmission/SevenGTronicService";
+import OilChangeService from "./pages/services/transmission/OilChangeService";
+import HydraulicBlockService from "./pages/services/transmission/HydraulicBlockService";
 import CleaningService from "./pages/services/engine/CleaningService";
 import EcoDeleteService from "./pages/services/engine/EcoDeleteService";
+import MajorOverhaulService from "./pages/services/engine/MajorOverhaulService";
+import TimingChainService from "./pages/services/engine/TimingChainService";
 import InteriorService from "./pages/services/tuning/InteriorService";
+import AerodynamicsService from "./pages/services/tuning/AerodynamicsService";
+import SoundIsolationService from "./pages/services/tuning/SoundIsolationService";
+import WheelsService from "./pages/services/tuning/WheelsService";
 
 const queryClient = new QueryClient();
 
@@ -45,13 +52,20 @@ const App = () => (
           
           {/* Transmission services */}
           <Route path="/services/transmission/7g-tronic" element={<SevenGTronicService />} />
+          <Route path="/services/transmission/oil-change" element={<OilChangeService />} />
+          <Route path="/services/transmission/hydraulic-block" element={<HydraulicBlockService />} />
           
           {/* Engine services */}
           <Route path="/services/engine/cleaning" element={<CleaningService />} />
           <Route path="/services/engine/eco-delete" element={<EcoDeleteService />} />
+          <Route path="/services/engine/major-overhaul" element={<MajorOverhaulService />} />
+          <Route path="/services/engine/timing-chain" element={<TimingChainService />} />
           
           {/* Tuning services */}
           <Route path="/services/tuning/interior" element={<InteriorService />} />
+          <Route path="/services/tuning/aerodynamics" element={<AerodynamicsService />} />
+          <Route path="/services/tuning/sound-isolation" element={<SoundIsolationService />} />
+          <Route path="/services/tuning/wheels" element={<WheelsService />} />
           
           <Route path="/services/:category/:service" element={<ServiceDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
