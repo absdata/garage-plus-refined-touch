@@ -112,10 +112,22 @@ const Index = () => {
       {/* Brand Logos */}
       <section className="py-12 border-t border-slate-200 bg-gradient-to-r from-slate-50 to-gray-50">
         <div className="container mx-auto px-4">
-          <div className="flex justify-center items-center space-x-12 opacity-60">
-            <div className="text-2xl font-bold text-slate-400">Mercedes-Benz</div>
-            <div className="text-2xl font-bold text-gray-400">AMG</div>
-            <div className="text-2xl font-bold text-slate-500">MAYBACH</div>
+          <div className="flex justify-center items-center space-x-12">
+            <img 
+              src="/lovable-uploads/e2f3b566-06f4-4469-a71d-ea7c3f719063.png" 
+              alt="Mercedes-Benz" 
+              className="h-8 opacity-60 hover:opacity-80 transition-opacity"
+            />
+            <img 
+              src="/lovable-uploads/c2a56e78-5491-4140-a84f-12343cdabbc6.png" 
+              alt="AMG" 
+              className="h-8 opacity-60 hover:opacity-80 transition-opacity"
+            />
+            <img 
+              src="/lovable-uploads/46dc61b8-50b1-4c99-b4e4-e332bab85bb6.png" 
+              alt="MAYBACH" 
+              className="h-8 opacity-60 hover:opacity-80 transition-opacity"
+            />
           </div>
         </div>
       </section>
