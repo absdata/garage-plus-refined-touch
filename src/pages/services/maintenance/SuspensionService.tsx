@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { ServiceLayout } from '@/components/layout/ServiceLayout';
 import { ServiceHero } from '@/components/sections/ServiceHero';
+import { ServiceDescription } from '@/components/sections/ServiceDescription';
 import { ContactSection } from '@/components/sections/ContactSection';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -16,6 +16,8 @@ const SuspensionService = () => {
     duration: "6-8 часов",
     image: "/mercedes_w222.jpg"
   };
+
+  const detailedDescription = "Пневматическая подвеска Mercedes-Benz W222 представляет собой инновационную систему, обеспечивающую непревзойденный комфорт и управляемость автомобиля. Эта технология автоматически адаптируется к дорожным условиям и стилю вождения, поддерживая оптимальный клиренс и жесткость подвески. Однако сложность системы требует профессионального подхода к диагностике и ремонту. Наш сервисный центр располагает специализированным оборудованием для работы с пневматическими системами Mercedes-Benz. Мы проводим комплексную диагностику всех компонентов: пневматических стоек, компрессора, датчиков уровня кузова и управляющих клапанов. Своевременное выявление утечек в пневматических элементах предотвращает дорогостоящий ремонт компрессора и других компонентов системы. Калибровка системы пневмоподвески после ремонта обеспечивает корректную работу всех режимов. Проверка геометрии колес гарантирует равномерный износ шин и стабильность управления. Использование оригинальных запчастей Mercedes-Benz критически важно для надежности и долговечности ремонта. Наши специалисты регулярно проходят обучение по новейшим технологиям подвески Mercedes-Benz, что гарантирует качество выполняемых работ.";
 
   const problems = [
     "Утечки в пневматических стойках",
@@ -42,6 +44,7 @@ const SuspensionService = () => {
   return (
     <ServiceLayout>
       <ServiceHero {...serviceData} />
+      <ServiceDescription description={detailedDescription} />
       
       {/* Main Problems Section */}
       <section className="py-16 bg-white">

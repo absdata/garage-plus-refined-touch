@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { ServiceLayout } from '@/components/layout/ServiceLayout';
 import { ServiceHero } from '@/components/sections/ServiceHero';
+import { ServiceDescription } from '@/components/sections/ServiceDescription';
 import { ContactSection } from '@/components/sections/ContactSection';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -16,6 +16,8 @@ const BrakeService = () => {
     duration: "3-4 часа",
     image: "/mercedes_w222.jpg"
   };
+
+  const detailedDescription = "Тормозная система Mercedes-Benz W222 – это сложный комплекс компонентов, обеспечивающих безопасность водителя и пассажиров. Качественное обслуживание тормозной системы критически важно для предотвращения аварийных ситуаций на дороге. Наш сервисный центр проводит комплексную диагностику всех элементов тормозной системы с использованием современного оборудования. Мы проверяем толщину тормозных колодок и дисков, состояние тормозной жидкости и герметичность всей системы. Своевременная замена изношенных компонентов предотвращает повреждение дорогостоящих элементов, таких как тормозные диски или суппорта. Правильная прокачка тормозной системы обеспечивает эффективность торможения и исключает появление воздушных пробок. Диагностика систем ABS и ESP гарантирует стабильность автомобиля в критических ситуациях. Использование оригинальных запчастей Mercedes-Benz обеспечивает максимальную совместимость и долговечность. Наши специалисты имеют многолетний опыт работы с тормозными системами Mercedes-Benz и знают все особенности модели W222. Регулярное обслуживание тормозной системы – это инвестиция в вашу безопасность и безопасность окружающих.";
 
   const problems = [
     "Износ тормозных колодок и дисков",
@@ -42,6 +44,7 @@ const BrakeService = () => {
   return (
     <ServiceLayout>
       <ServiceHero {...serviceData} />
+      <ServiceDescription description={detailedDescription} />
       
       {/* Main Problems Section */}
       <section className="py-16 bg-white">

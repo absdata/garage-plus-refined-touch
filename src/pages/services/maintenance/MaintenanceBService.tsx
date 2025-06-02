@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { ServiceLayout } from '@/components/layout/ServiceLayout';
 import { ServiceHero } from '@/components/sections/ServiceHero';
+import { ServiceDescription } from '@/components/sections/ServiceDescription';
 import { ContactSection } from '@/components/sections/ContactSection';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -16,6 +16,8 @@ const MaintenanceBService = () => {
     duration: "4-5 часов",
     image: "/mercedes_w222.jpg"
   };
+
+  const detailedDescription = "Техническое обслуживание Б (ТО-Б) для Mercedes-Benz W222 – это комплексная процедура, которая обеспечивает надежную и безопасную эксплуатацию вашего автомобиля. Расширенное техническое обслуживание включает в себя не только замену масла двигателя, но и полную диагностику всех систем автомобиля. Мы проводим замену воздушного, салонного и топливного фильтров, что обеспечивает чистоту воздуха в салоне и оптимальную работу двигателя. Особое внимание уделяется проверке свечей зажигания и катушек зажигания, которые напрямую влияют на мощность и экономичность двигателя. Диагностика тормозной системы позволяет выявить потенциальные проблемы на ранней стадии, что критически важно для безопасности. Проверка подвески и рулевого управления гарантирует комфортную езду и предотвращает преждевременный износ шин. Адаптация электронных систем и сброс сервисных интервалов обеспечивают корректную работу всех систем автомобиля. Регулярное проведение ТО-Б значительно продлевает срок службы автомобиля и предотвращает дорогостоящие поломки. Наши специалисты используют только оригинальные запчасти и расходные материалы Mercedes-Benz. Это инвестиция в долговечность и надежность вашего автомобиля.";
 
   const problems = [
     "Засорение воздушного и салонного фильтров",
@@ -42,6 +44,7 @@ const MaintenanceBService = () => {
   return (
     <ServiceLayout>
       <ServiceHero {...serviceData} />
+      <ServiceDescription description={detailedDescription} />
       
       {/* Main Problems Section */}
       <section className="py-16 bg-white">

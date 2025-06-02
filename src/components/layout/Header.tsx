@@ -29,9 +29,12 @@ export const Header = () => {
             <div className="text-sm text-slate-600 font-medium">Mercedes Benz</div>
             <div className="text-xs text-slate-500">независимый специалист</div>
           </div>
-          <div className="w-12 h-8 bg-gradient-to-r from-slate-300 to-gray-300 rounded-lg flex items-center justify-center shadow-md">
-            <div className="w-6 h-6 bg-white rounded-full shadow-inner"></div>
-          </div>
+          <img 
+            src="/lovable-uploads/9c0805c4-26b6-4d9f-b182-0e49c5b80867.png" 
+            alt="Mercedes Benz - независимый специалист"
+            title="Mercedes Benz - независимый специалист"
+            className="h-12 w-auto"
+          />
         </div>
       </div>
     </header>

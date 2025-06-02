@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { ServiceLayout } from '@/components/layout/ServiceLayout';
 import { ServiceHero } from '@/components/sections/ServiceHero';
+import { ServiceDescription } from '@/components/sections/ServiceDescription';
 import { ContactSection } from '@/components/sections/ContactSection';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -16,6 +16,8 @@ const CleaningService = () => {
     duration: "3-4 часа",
     image: "/mercedes_w222.jpg"
   };
+
+  const detailedDescription = "Очистка двигателя от нагара и отложений является критически важной процедурой для поддержания оптимальной работы Mercedes-Benz W222. Современные двигатели с непосредственным впрыском топлива особенно подвержены образованию нагара на впускных клапанах и в камере сгорания. Накопление отложений приводит к снижению мощности, увеличению расхода топлива и неровной работе двигателя на холостом ходу. Наш сервисный центр использует профессиональное оборудование для безопасной и эффективной очистки всех компонентов двигателя. Процедура включает в себя очистку камеры сгорания, впускных клапанов, поршней и системы смазки от вредных отложений. Мы применяем специальные химические составы, которые безопасны для двигателя и эффективно растворяют даже стойкие отложения. Промывка системы смазки удаляет продукты износа и старое масло, обеспечивая чистоту внутренних каналов. Контрольная диагностика после очистки подтверждает эффективность процедуры и восстановление параметров двигателя. Регулярная очистка двигателя значительно продлевает его ресурс и предотвращает дорогостоящие поломки. Эта процедура особенно важна для автомобилей, эксплуатируемых в городских условиях с частыми остановками и стартами.";
 
   const problems = [
     "Нагар на клапанах и поршнях",
@@ -42,6 +44,7 @@ const CleaningService = () => {
   return (
     <ServiceLayout>
       <ServiceHero {...serviceData} />
+      <ServiceDescription description={detailedDescription} />
       
       {/* Main Problems Section */}
       <section className="py-16 bg-white">
