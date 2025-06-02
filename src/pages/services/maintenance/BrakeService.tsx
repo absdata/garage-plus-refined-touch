@@ -10,6 +10,7 @@ import { CheckCircle, AlertTriangle, Wrench, Clock } from 'lucide-react';
 const BrakeService = () => {
   const serviceData = {
     title: "Обслуживание тормозной системы",
+    subtitle: "Безопасность торможения Mercedes-Benz W222",
     description: "Диагностика, ремонт и замена компонентов тормозной системы Mercedes-Benz W222",
     price: "от 12 000 ₽",
     duration: "3-4 часа",

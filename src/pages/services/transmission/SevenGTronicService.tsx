@@ -10,6 +10,7 @@ import { CheckCircle, AlertTriangle, Wrench, Clock } from 'lucide-react';
 const SevenGTronicService = () => {
   const serviceData = {
     title: "Обслуживание 7G-Tronic",
+    subtitle: "Автоматическая коробка передач Mercedes-Benz W222",
     description: "Профессиональное обслуживание автоматической коробки передач 7G-Tronic Mercedes-Benz W222",
     price: "от 18 000 ₽",
     duration: "4-6 часов",

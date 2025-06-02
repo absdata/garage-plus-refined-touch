@@ -10,6 +10,7 @@ import { CheckCircle, AlertTriangle, Wrench, Clock } from 'lucide-react';
 const MaintenanceBService = () => {
   const serviceData = {
     title: "Техническое обслуживание Б (ТО-Б)",
+    subtitle: "Расширенное ТО Mercedes-Benz W222",
     description: "Расширенное техническое обслуживание Mercedes-Benz W222 с заменой фильтров и углубленной диагностикой",
     price: "от 15 000 ₽",
     duration: "4-5 часов",

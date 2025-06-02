@@ -10,6 +10,7 @@ import { CheckCircle, AlertTriangle, Wrench, Clock } from 'lucide-react';
 const InteriorService = () => {
   const serviceData = {
     title: "Тюнинг салона",
+    subtitle: "Перешив салона Mercedes-Benz W222",
     description: "Профессиональный тюнинг и перешив салона Mercedes-Benz W222 премиальными материалами",
     price: "от 150 000 ₽",
     duration: "2-3 недели",

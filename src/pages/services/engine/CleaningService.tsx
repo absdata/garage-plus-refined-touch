@@ -10,6 +10,7 @@ import { CheckCircle, AlertTriangle, Wrench, Clock } from 'lucide-react';
 const CleaningService = () => {
   const serviceData = {
     title: "Очистка двигателя",
+    subtitle: "Очистка от нагара Mercedes-Benz W222",
     description: "Профессиональная очистка двигателя от нагара и отложений Mercedes-Benz W222",
     price: "от 8 000 ₽",
     duration: "3-4 часа",

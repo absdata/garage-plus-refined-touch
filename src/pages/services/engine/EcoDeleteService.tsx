@@ -10,6 +10,7 @@ import { CheckCircle, AlertTriangle, Wrench, Clock } from 'lucide-react';
 const EcoDeleteService = () => {
   const serviceData = {
     title: "Удаление экологических систем",
+    subtitle: "EGR, DPF удаление Mercedes-Benz W222",
     description: "Профессиональное удаление EGR, DPF и других экологических систем Mercedes-Benz W222",
     price: "от 35 000 ₽",
     duration: "6-8 часов",

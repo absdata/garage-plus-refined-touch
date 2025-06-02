@@ -10,6 +10,7 @@ import { CheckCircle, AlertTriangle, Wrench, Clock } from 'lucide-react';
 const SuspensionService = () => {
   const serviceData = {
     title: "Ремонт подвески",
+    subtitle: "Пневматическая подвеска Mercedes-Benz W222",
     description: "Диагностика и ремонт пневматической подвески Mercedes-Benz W222",
     price: "от 25 000 ₽",
     duration: "6-8 часов",
