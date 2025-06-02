@@ -110,23 +110,23 @@ const Index = () => {
       </section>
 
       {/* Brand Logos */}
-      <section className="py-12 border-t border-slate-200 bg-gradient-to-r from-slate-50 to-gray-50">
+      <section className="py-8 md:py-12 border-t border-slate-200 bg-gradient-to-r from-slate-50 to-gray-50">
         <div className="container mx-auto px-4">
-          <div className="flex justify-center items-center space-x-12">
+          <div className="flex flex-nowrap md:flex-wrap justify-center items-center gap-4 md:gap-8 lg:gap-12 overflow-x-auto pb-4 -mx-4 px-4">
             <img 
               src="/mb.svg" 
               alt="Mercedes-Benz" 
-              className="h-6 opacity-60 hover:opacity-80 transition-opacity"
+              className="h-2 md:h-4 opacity-60 hover:opacity-80 transition-opacity flex-shrink-0"
             />
             <img 
               src="/amg.svg" 
               alt="AMG" 
-              className="h-6 opacity-60 hover:opacity-80 transition-opacity"
+              className="h-2 md:h-4 opacity-60 hover:opacity-80 transition-opacity flex-shrink-0"
             />
             <img 
               src="mbh.svg" 
               alt="MAYBACH" 
-              className="h-6 opacity-60 hover:opacity-80 transition-opacity"
+              className="h-2 md:h-4 opacity-60 hover:opacity-80 transition-opacity flex-shrink-0"
             />
           </div>
         </div>
