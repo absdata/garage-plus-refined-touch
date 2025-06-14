@@ -296,7 +296,7 @@ const Index = () => {
               <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white group cursor-pointer">
                 <div className="aspect-[4/3] overflow-hidden rounded-t-2xl">
                   <img 
-                    src="tuning.jpg"
+                    src="tuning1.jpg"
                     alt="Тюнинг"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
