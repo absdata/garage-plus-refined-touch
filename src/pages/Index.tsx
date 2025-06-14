@@ -218,7 +218,7 @@ const Index = () => {
               <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white group cursor-pointer">
                 <div className="aspect-[4/3] overflow-hidden rounded-t-2xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    src="engine2.jpg"
                     alt="Техническое обслуживание"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -244,7 +244,7 @@ const Index = () => {
               <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white group cursor-pointer">
                 <div className="aspect-[4/3] overflow-hidden rounded-t-2xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    src="transmission.jpg"
                     alt="Обслуживание АКПП"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -270,7 +270,7 @@ const Index = () => {
               <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white group cursor-pointer">
                 <div className="aspect-[4/3] overflow-hidden rounded-t-2xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1486496572940-2bb2341fdbdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    src="engine.jpg"
                     alt="Ремонт ДВС"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -296,7 +296,7 @@ const Index = () => {
               <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white group cursor-pointer">
                 <div className="aspect-[4/3] overflow-hidden rounded-t-2xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    src="tuning.jpg"
                     alt="Тюнинг"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
