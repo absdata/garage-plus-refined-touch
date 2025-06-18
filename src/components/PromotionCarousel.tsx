@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { theme } from '@/config/theme';
 
 export const PromotionCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -53,7 +54,7 @@ export const PromotionCarousel = () => {
   return (
     <div className="relative">
       <div className="flex items-center justify-between mb-8">
-        <h3 className="text-2xl font-bold">Актуальные предложения</h3>
+        <h3 className="text-2xl font-bold" style={{ color: theme.colors.text.primary }}>Актуальные предложения</h3>
         
         <div className="flex space-x-2">
           <Button
@@ -61,6 +62,10 @@ export const PromotionCarousel = () => {
             size="sm"
             onClick={prevSlide}
             className="rounded-full w-10 h-10 p-0"
+            style={{ 
+              borderColor: theme.colors.text.muted,
+              color: theme.colors.text.primary
+            }}
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
@@ -69,6 +74,10 @@ export const PromotionCarousel = () => {
             size="sm"
             onClick={nextSlide}
             className="rounded-full w-10 h-10 p-0"
+            style={{ 
+              borderColor: theme.colors.text.muted,
+              color: theme.colors.text.primary
+            }}
           >
             <ChevronRight className="h-4 w-4" />
           </Button>
@@ -77,33 +86,45 @@ export const PromotionCarousel = () => {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {promotions.slice(currentSlide, currentSlide + 3).map((promo, index) => (
-          <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl bg-white relative overflow-hidden">
+          <Card 
+            key={index} 
+            className="border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl relative overflow-hidden"
+            style={{ 
+              backgroundColor: theme.colors.surface,
+              boxShadow: theme.colors.shadows.card
+            }}
+          >
             <div className="absolute top-4 right-4">
-              <Badge variant="secondary" className="bg-gray-900 text-white">
+              <Badge 
+                variant="secondary" 
+                className="text-white"
+                style={{ backgroundColor: theme.colors.text.primary }}
+              >
                 {promo.badge}
               </Badge>
             </div>
             
             <CardHeader className="pb-4">
-              <CardTitle className="text-xl pr-16">{promo.title}</CardTitle>
-              <CardDescription className="text-gray-600 leading-relaxed">
+              <CardTitle className="text-xl pr-16" style={{ color: theme.colors.text.primary }}>{promo.title}</CardTitle>
+              <CardDescription className="leading-relaxed" style={{ color: theme.colors.text.secondary }}>
                 {promo.description}
               </CardDescription>
             </CardHeader>
             
             <CardContent className="space-y-4">
               <div className="flex items-center space-x-3">
-                <div className="text-2xl font-bold text-gray-900">{promo.price}</div>
+                <div className="text-2xl font-bold" style={{ color: theme.colors.text.primary }}>{promo.price}</div>
                 {promo.originalPrice && (
-                  <div className="text-lg text-gray-400 line-through">{promo.originalPrice}</div>
+                  <div className="text-lg line-through" style={{ color: theme.colors.text.muted }}>{promo.originalPrice}</div>
                 )}
               </div>
               
-              <div className="text-sm text-gray-500">{promo.deadline}</div>
+              <div className="text-sm" style={{ color: theme.colors.text.muted }}>{promo.deadline}</div>
               
               <Button 
                 onClick={scrollToContact}
-                className="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 rounded-xl transition-all duration-300 hover:shadow-lg"
+                className="w-full text-white py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:opacity-90"
+                style={{ backgroundColor: theme.colors.button.primary }}
               >
                 Записаться
               </Button>
