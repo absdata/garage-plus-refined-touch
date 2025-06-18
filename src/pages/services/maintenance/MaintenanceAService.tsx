@@ -14,7 +14,7 @@ const MaintenanceAService = () => {
     description: "Базовое техническое обслуживание Mercedes-Benz W222 с проверкой основных систем автомобиля",
     price: "от 8 500 ₽",
     duration: "2-3 часа",
-    image: "/mercedes_w222.jpg"
+    image: "/services/maintenance/oil-change.jpg" // Placeholder for engine oil change service image
   };
 
   const problems = [

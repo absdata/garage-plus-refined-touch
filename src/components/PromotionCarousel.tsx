@@ -11,6 +11,24 @@ export const PromotionCarousel = () => {
 
   const promotions = [
     {
+      title: 'Замена передних тормозных колодок "под ключ"',
+      description: 'Для Mercedes-Benz W222 с мотором: OM276, OM278, OM176. Включает оригинальные колодки Mercedes-Benz, датчик колодок, работу и автохимию.',
+      price: '27 800 ₽',
+      originalPrice: '33 800 ₽',
+      deadline: 'Ограниченное предложение',
+      badge: 'Новинка',
+      image: '/promotions/brakes.jpg'
+    },
+    {
+      title: 'ТО + Диагностика ходовой БЕСПЛАТНО',
+      description: 'Пройдите техническое обслуживание и получите профессиональную диагностику ходовой части автомобиля в подарок',
+      price: 'от 8 500 ₽',
+      originalPrice: '11 000 ₽',
+      deadline: 'Ограниченное время',
+      badge: 'Подарок',
+      image: '/promotions/to.jpg'
+    },
+    {
       title: 'Чистка радиаторов',
       description: 'Чистка радиатора кондиционера, охлаждения и интеркулера',
       price: '3 990 ₽',
@@ -94,7 +112,7 @@ export const PromotionCarousel = () => {
               boxShadow: theme.colors.shadows.card
             }}
           >
-            <div className="absolute top-4 right-4">
+            <div className="absolute top-4 right-4 z-10">
               <Badge 
                 variant="secondary" 
                 className="text-white"
@@ -103,6 +121,16 @@ export const PromotionCarousel = () => {
                 {promo.badge}
               </Badge>
             </div>
+            
+            {promo.image && (
+              <div className="aspect-[16/9] overflow-hidden">
+                <img 
+                  src={promo.image}
+                  alt={promo.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            )}
             
             <CardHeader className="pb-4">
               <CardTitle className="text-xl pr-16" style={{ color: theme.colors.text.primary }}>{promo.title}</CardTitle>
