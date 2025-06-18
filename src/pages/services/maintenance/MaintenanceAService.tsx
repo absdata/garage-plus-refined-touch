@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ServiceLayout } from '@/components/layout/ServiceLayout';
 import { ServiceHero } from '@/components/sections/ServiceHero';
@@ -6,6 +5,7 @@ import { ContactSection } from '@/components/sections/ContactSection';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, AlertTriangle, Wrench, Clock } from 'lucide-react';
+import { theme } from '@/config/theme';
 
 const MaintenanceAService = () => {
   const serviceData = {
@@ -59,7 +59,10 @@ const MaintenanceAService = () => {
       </section>
 
       {/* Work Stages Section */}
-      <section className="py-16 bg-[#f0ebe5]">
+      <section 
+        className="py-16"
+        style={{ backgroundColor: theme.colors.backgroundLight }}
+      >
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-black">Этапы работы</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -67,7 +70,10 @@ const MaintenanceAService = () => {
               <Card key={index} className="border-0 shadow-lg bg-white">
                 <CardHeader>
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-blue-400 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    <div 
+                      className="w-8 h-8 text-white rounded-full flex items-center justify-center text-sm font-bold"
+                      style={{ backgroundColor: theme.colors.button.primary }}
+                    >
                       {index + 1}
                     </div>
                     <CardTitle className="text-lg text-black">{stage}</CardTitle>
@@ -84,10 +90,16 @@ const MaintenanceAService = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-black">Фото и видео работ</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="aspect-video bg-[#f0ebe5] rounded-lg flex items-center justify-center">
+            <div 
+              className="aspect-video rounded-lg flex items-center justify-center"
+              style={{ backgroundColor: theme.colors.backgroundLight }}
+            >
               <p className="text-black">Видео процесса ТО-А</p>
             </div>
-            <div className="aspect-video bg-[#f0ebe5] rounded-lg flex items-center justify-center">
+            <div 
+              className="aspect-video rounded-lg flex items-center justify-center"
+              style={{ backgroundColor: theme.colors.backgroundLight }}
+            >
               <p className="text-black">Фото результатов работы</p>
             </div>
           </div>
@@ -95,7 +107,10 @@ const MaintenanceAService = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-16 bg-[#f0ebe5]">
+      <section 
+        className="py-16"
+        style={{ backgroundColor: theme.colors.backgroundLight }}
+      >
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-black">Стоимость услуг</h2>
           <Card className="max-w-md mx-auto border-0 shadow-lg bg-white">

@@ -1,4 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
+import { theme } from '@/config/theme';
 
 export interface ServiceHeroProps {
   title: string;
@@ -25,26 +27,52 @@ export const ServiceHero = ({ title, subtitle, description, price, duration, ima
   }, [image]);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-slate-100 via-gray-100 to-slate-100">
+    <section 
+      className="py-16"
+      style={{ background: theme.colors.gradients.heroAlt }}
+    >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-slate-800 to-gray-800 bg-clip-text text-transparent">
+            <h1 
+              className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent"
+              style={{ 
+                background: theme.colors.gradients.text,
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}
+            >
               {title}
             </h1>
-            <h2 className="text-xl text-slate-600 mb-6">{subtitle}</h2>
-            <p className="text-lg text-slate-700 mb-8 leading-relaxed">
+            <h2 className="text-xl mb-6" style={{ color: theme.colors.text.secondary }}>
+              {subtitle}
+            </h2>
+            <p className="text-lg mb-8 leading-relaxed" style={{ color: theme.colors.text.primary }}>
               {description}
             </p>
             <div className="flex flex-wrap gap-4 items-center">
-              <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-xl shadow-lg border border-slate-200">
-                <span className="text-sm text-slate-600">Стоимость</span>
-                <div className="text-2xl font-bold text-slate-800">{price}</div>
+              <div 
+                className="px-6 py-3 rounded-xl shadow-lg border border-gray-200"
+                style={{ backgroundColor: theme.colors.surfaceBlur }}
+              >
+                <span className="text-sm" style={{ color: theme.colors.text.muted }}>
+                  Стоимость
+                </span>
+                <div className="text-2xl font-bold" style={{ color: theme.colors.text.primary }}>
+                  {price}
+                </div>
               </div>
               {duration && (
-                <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-xl shadow-lg border border-slate-200">
-                  <span className="text-sm text-slate-600">Время</span>
-                  <div className="text-2xl font-bold text-slate-800">{duration}</div>
+                <div 
+                  className="px-6 py-3 rounded-xl shadow-lg border border-gray-200"
+                  style={{ backgroundColor: theme.colors.surfaceBlur }}
+                >
+                  <span className="text-sm" style={{ color: theme.colors.text.muted }}>
+                    Время
+                  </span>
+                  <div className="text-2xl font-bold" style={{ color: theme.colors.text.primary }}>
+                    {duration}
+                  </div>
                 </div>
               )}
             </div>

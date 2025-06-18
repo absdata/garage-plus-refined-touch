@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { ServiceLayout } from '@/components/layout/ServiceLayout';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { theme } from '@/config/theme';
 
 const Maintenance = () => {
   const services = [
@@ -41,7 +41,10 @@ const Maintenance = () => {
   return (
     <ServiceLayout>
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-[#e6dfd6] via-[#ddd6cd] to-[#e6dfd6]">
+      <section 
+        className="py-16"
+        style={{ background: theme.colors.gradients.heroAlt }}
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-black">
@@ -56,7 +59,10 @@ const Maintenance = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="pb-20 px-4 bg-[#e6dfd6]">
+      <section 
+        className="pb-20 px-4"
+        style={{ backgroundColor: theme.colors.background }}
+      >
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((service) => (
@@ -86,7 +92,17 @@ const Maintenance = () => {
                   
                   <CardContent className="pt-0">
                     <Button 
-                      className="w-full bg-blue-400 hover:bg-blue-500 text-white rounded-xl py-3 transition-all duration-300 shadow-lg hover:shadow-xl"
+                      className="w-full text-white rounded-xl py-3 transition-all duration-300 shadow-lg hover:shadow-xl"
+                      style={{ 
+                        backgroundColor: theme.colors.button.primary,
+                        ':hover': { backgroundColor: theme.colors.button.primaryHover }
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = theme.colors.button.primaryHover;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = theme.colors.button.primary;
+                      }}
                     >
                       Подробнее
                       <ArrowRight className="ml-2 h-4 w-4" />
