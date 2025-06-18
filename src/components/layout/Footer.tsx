@@ -1,11 +1,16 @@
+
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 
 const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
+  return new Promise<void>((resolve) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+    // Wait for scroll to complete
+    setTimeout(() => resolve(), 500);
   });
 };
 
