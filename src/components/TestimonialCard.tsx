@@ -2,6 +2,7 @@
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from 'lucide-react';
+import { theme } from '@/config/theme';
 
 interface TestimonialCardProps {
   name: string;
@@ -12,7 +13,14 @@ interface TestimonialCardProps {
 
 export const TestimonialCard = ({ name, car, text, rating }: TestimonialCardProps) => {
   return (
-    <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-2xl bg-white">
+    <Card 
+      className="border-0 transition-all duration-300 hover:-translate-y-1 rounded-2xl"
+      style={{ 
+        backgroundColor: theme.colors.surface, 
+        boxShadow: theme.colors.shadows.card,
+        '&:hover': { boxShadow: theme.colors.shadows.cardHover }
+      }}
+    >
       <CardContent className="p-6">
         <div className="flex mb-4">
           {[...Array(rating)].map((_, i) => (
@@ -20,11 +28,26 @@ export const TestimonialCard = ({ name, car, text, rating }: TestimonialCardProp
           ))}
         </div>
         
-        <p className="text-gray-600 mb-6 leading-relaxed">"{text}"</p>
+        <p 
+          className="mb-6 leading-relaxed"
+          style={{ color: theme.colors.text.secondary }}
+        >
+          "{text}"
+        </p>
         
         <div>
-          <div className="font-semibold text-gray-900">{name}</div>
-          <div className="text-sm text-gray-500">{car}</div>
+          <div 
+            className="font-semibold"
+            style={{ color: theme.colors.text.primary }}
+          >
+            {name}
+          </div>
+          <div 
+            className="text-sm"
+            style={{ color: theme.colors.text.muted }}
+          >
+            {car}
+          </div>
         </div>
       </CardContent>
     </Card>

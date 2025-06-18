@@ -102,10 +102,24 @@ const WheelsService = () => {
                   <span style={{ color: theme.colors.text.primary }}>{pricing.total}</span>
                 </div>
               </div>
-              <div className="mt-6 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200">
-                <div className="flex items-center space-x-2 text-green-700">
-                  <CheckCircle className="h-5 w-5" />
-                  <span className="font-medium">Гарантия: 1 год</span>
+              <div 
+                className="mt-6 p-4 rounded-xl border"
+                style={{ 
+                  backgroundColor: theme.colors.backgroundLight,
+                  borderColor: theme.colors.button.primary + '20'
+                }}
+              >
+                <div className="flex items-center space-x-2">
+                  <CheckCircle 
+                    className="h-5 w-5"
+                    style={{ color: theme.colors.button.primary }} 
+                  />
+                  <span 
+                    className="font-medium"
+                    style={{ color: theme.colors.text.primary }}
+                  >
+                    Гарантия: 1 год
+                  </span>
                 </div>
               </div>
             </CardContent>

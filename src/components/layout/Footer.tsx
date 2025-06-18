@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
+import { theme } from '@/config/theme';
 
 const scrollToTop = () => {
   return new Promise<void>((resolve) => {
@@ -53,7 +54,12 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 text-white py-12">
+    <footer 
+      className="py-12 text-white"
+      style={{ 
+        background: `linear-gradient(135deg, ${theme.colors.text.primary}, ${theme.colors.text.secondary}, ${theme.colors.text.primary})` 
+      }}
+    >
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
@@ -64,41 +70,133 @@ export const Footer = () => {
                 className="h-10 w-auto"
               />
             </div>
-            <p className="text-slate-200">
+            <p style={{ color: theme.colors.background }}>
               Профессиональный ремонт и обслуживание Mercedes-Benz с 1999 года
             </p>
           </div>
           
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-slate-300">Услуги</h3>
-            <ul className="space-y-2 text-slate-200">
-              <li><Link to="/services/maintenance" className="hover:text-slate-100 transition-colors" onClick={() => scrollToTop()}>Техническое обслуживание</Link></li>
-              <li><Link to="/services/transmission" className="hover:text-slate-100 transition-colors" onClick={() => scrollToTop()}>Обслуживание АКПП</Link></li>
-              <li><Link to="/services/engine" className="hover:text-slate-100 transition-colors" onClick={() => scrollToTop()}>Ремонт двигателя</Link></li>
-              <li><Link to="/services/tuning" className="hover:text-slate-100 transition-colors" onClick={() => scrollToTop()}>Тюнинг</Link></li>
+            <h3 
+              className="font-semibold text-lg mb-4"
+              style={{ color: theme.colors.backgroundLight }}
+            >
+              Услуги
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link 
+                  to="/services/maintenance" 
+                  className="transition-colors hover:opacity-90"
+                  style={{ color: theme.colors.background }} 
+                  onClick={() => scrollToTop()}
+                >
+                  Техническое обслуживание
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/services/transmission" 
+                  className="transition-colors hover:opacity-90"
+                  style={{ color: theme.colors.background }} 
+                  onClick={() => scrollToTop()}
+                >
+                  Обслуживание АКПП
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/services/engine" 
+                  className="transition-colors hover:opacity-90"
+                  style={{ color: theme.colors.background }} 
+                  onClick={() => scrollToTop()}
+                >
+                  Ремонт двигателя
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/services/tuning" 
+                  className="transition-colors hover:opacity-90"
+                  style={{ color: theme.colors.background }} 
+                  onClick={() => scrollToTop()}
+                >
+                  Тюнинг
+                </Link>
+              </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-slate-300">Информация</h3>
-            <ul className="space-y-2 text-slate-200">
-              <li><Link to="/about" className="hover:text-slate-100 transition-colors" onClick={() => scrollToTop()}>О нас</Link></li>
-              <li><Link to="/#reviews" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Отзывы</Link></li>
-              <li><Link to="/#contact" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Контакты</Link></li>
-              <li><Link to="/#promotions" className="hover:text-slate-100 transition-colors" onClick={handleLinkClick}>Акции</Link></li>
+            <h3 
+              className="font-semibold text-lg mb-4"
+              style={{ color: theme.colors.backgroundLight }}
+            >
+              Информация
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link 
+                  to="/about" 
+                  className="transition-colors hover:opacity-90"
+                  style={{ color: theme.colors.background }} 
+                  onClick={() => scrollToTop()}
+                >
+                  О нас
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/#reviews" 
+                  className="transition-colors hover:opacity-90"
+                  style={{ color: theme.colors.background }} 
+                  onClick={handleLinkClick}
+                >
+                  Отзывы
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/#contact" 
+                  className="transition-colors hover:opacity-90"
+                  style={{ color: theme.colors.background }} 
+                  onClick={handleLinkClick}
+                >
+                  Контакты
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/#promotions" 
+                  className="transition-colors hover:opacity-90"
+                  style={{ color: theme.colors.background }} 
+                  onClick={handleLinkClick}
+                >
+                  Акции
+                </Link>
+              </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-slate-300">Контакты</h3>
-            <div className="space-y-2 text-slate-200">
+            <h3 
+              className="font-semibold text-lg mb-4"
+              style={{ color: theme.colors.backgroundLight }}
+            >
+              Контакты
+            </h3>
+            <div className="space-y-2" style={{ color: theme.colors.background }}>
               <p>г. Москва, ул. Поклонная, 11 стр. 1А</p>
               <p>+7 (495) 221-8480</p>
               <p>ПН-ПТ: 11:30-20:30<br />СБ: 12:00-17:00<br />ВС: выходной</p>
               <Button 
                 variant="outline"
                 size="sm"
-                className="mt-2 border-white text-slate-900"
+                className="mt-2"
+                style={{ 
+                  backgroundColor: theme.colors.backgroundLight,
+                  borderColor: theme.colors.backgroundLight,
+                  color: theme.colors.text.primary
+                }}
                 onClick={() => window.open('https://yandex.ru/maps/?text=' + encodeURIComponent('г. Москва, ул. Поклонная, 11 стр. 1А'), '_blank')}
               >
                 Проложить маршрут
@@ -107,7 +205,13 @@ export const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-300">
+        <div 
+          className="mt-8 pt-8 text-center"
+          style={{ 
+            borderTop: `1px solid ${theme.colors.backgroundLight}`, 
+            color: theme.colors.background 
+          }}
+        >
           <p>&copy; 2024 GARAGE PLUS. Все права защищены.</p>
         </div>
       </div>
