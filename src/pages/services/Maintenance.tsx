@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ServiceLayout } from '@/components/layout/ServiceLayout';
 import { Button } from "@/components/ui/button";
@@ -92,17 +93,8 @@ const Maintenance = () => {
                   
                   <CardContent className="pt-0">
                     <Button 
-                      className="w-full text-white rounded-xl py-3 transition-all duration-300 shadow-lg hover:shadow-xl"
-                      style={{ 
-                        backgroundColor: theme.colors.button.primary,
-                        ':hover': { backgroundColor: theme.colors.button.primaryHover }
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = theme.colors.button.primaryHover;
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = theme.colors.button.primary;
-                      }}
+                      className="w-full text-white rounded-xl py-3 transition-all duration-300 shadow-lg hover:shadow-xl hover:opacity-90"
+                      style={{ backgroundColor: theme.colors.button.primary }}
                     >
                       Подробнее
                       <ArrowRight className="ml-2 h-4 w-4" />
