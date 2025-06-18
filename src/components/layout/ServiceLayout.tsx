@@ -9,7 +9,7 @@ interface ServiceLayoutProps {
 
 export const ServiceLayout = ({ children }: ServiceLayoutProps) => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 text-gray-900">
+    <div className="min-h-screen bg-[#e6dfd6] text-black">
       <Header />
       <main className="pt-24">
         {children}

@@ -40,7 +40,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-400/30 shadow-lg">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#e6dfd6]/90 backdrop-blur-sm border-b border-slate-300/30 shadow-lg">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2" onClick={() => scrollToTop()}>          
           <img 
@@ -54,35 +54,35 @@ export const Header = () => {
           <nav className="flex space-x-6">
             <a 
               href="/#services" 
-              className="text-black hover:text-gray-700 transition-all duration-300 hover:scale-105"
+              className="text-black hover:text-slate-700 transition-all duration-300 hover:scale-105"
               onClick={(e) => scrollToSection(e, '#services')}
             >
               Услуги
             </a>
             <a 
               href="/#promotions" 
-              className="text-black hover:text-gray-700 transition-all duration-300 hover:scale-105"
+              className="text-black hover:text-slate-700 transition-all duration-300 hover:scale-105"
               onClick={(e) => scrollToSection(e, '#promotions')}
             >
               Акции
             </a>
             <a 
               href="/#reviews" 
-              className="text-black hover:text-gray-700 transition-all duration-300 hover:scale-105"
+              className="text-black hover:text-slate-700 transition-all duration-300 hover:scale-105"
               onClick={(e) => scrollToSection(e, '#reviews')}
             >
               Отзывы
             </a>
             <a 
               href="/#contact" 
-              className="text-black hover:text-gray-700 transition-all duration-300 hover:scale-105"
+              className="text-black hover:text-slate-700 transition-all duration-300 hover:scale-105"
               onClick={(e) => scrollToSection(e, '#contact')}
             >
               Контакты
             </a>
             <Link 
               to="/about" 
-              className="text-black hover:text-gray-700 transition-all duration-300 hover:scale-105"
+              className="text-black hover:text-slate-700 transition-all duration-300 hover:scale-105"
               onClick={() => scrollToTop()}
             >
               О нас

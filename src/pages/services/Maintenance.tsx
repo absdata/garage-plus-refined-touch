@@ -41,13 +41,13 @@ const Maintenance = () => {
   return (
     <ServiceLayout>
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-slate-100 via-gray-100 to-slate-100">
+      <section className="py-16 bg-gradient-to-br from-[#e6dfd6] via-[#ddd6cd] to-[#e6dfd6]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-800 via-gray-800 to-slate-700 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-black">
               Техническое обслуживание и ремонт
             </h1>
-            <p className="text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
               Профессиональное обслуживание Mercedes-Benz W222 по стандартам завода-изготовителя. 
               Используем только оригинальные запчасти и расходные материалы.
             </p>
@@ -56,7 +56,7 @@ const Maintenance = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="pb-20 px-4">
+      <section className="pb-20 px-4 bg-[#e6dfd6]">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((service) => (
@@ -65,7 +65,7 @@ const Maintenance = () => {
                 to={`/services/maintenance/${service.id}`}
                 className="group"
               >
-                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 rounded-2xl overflow-hidden bg-white/90 backdrop-blur-sm group shadow-slate-200/30 hover:shadow-slate-300/50">
+                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 rounded-2xl overflow-hidden bg-white/90 backdrop-blur-sm group">
                   <div className="aspect-[4/3] overflow-hidden">
                     <img 
                       src={service.image} 
@@ -76,17 +76,17 @@ const Maintenance = () => {
                   
                   <CardHeader className="pb-4">
                     <div className="flex justify-between items-start mb-2">
-                      <CardTitle className="text-xl text-slate-800 group-hover:text-slate-900 transition-colors duration-300">{service.title}</CardTitle>
-                      <div className="text-lg font-bold text-gray-700">{service.price}</div>
+                      <CardTitle className="text-xl text-black group-hover:text-slate-700 transition-colors duration-300">{service.title}</CardTitle>
+                      <div className="text-lg font-bold text-black">{service.price}</div>
                     </div>
-                    <CardDescription className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
+                    <CardDescription className="text-black leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
                       {service.description}
                     </CardDescription>
                   </CardHeader>
                   
                   <CardContent className="pt-0">
                     <Button 
-                      className="w-full bg-gradient-to-r from-slate-600 to-gray-600 hover:from-slate-700 hover:to-gray-700 text-white rounded-xl py-3 transition-all duration-300 shadow-lg shadow-slate-300/50 hover:shadow-xl hover:shadow-slate-400/60"
+                      className="w-full bg-blue-400 hover:bg-blue-500 text-white rounded-xl py-3 transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
                       Подробнее
                       <ArrowRight className="ml-2 h-4 w-4" />
