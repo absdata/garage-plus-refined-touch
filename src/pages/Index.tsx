@@ -11,9 +11,19 @@ import { Footer } from "@/components/layout/Footer";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { Link } from 'react-router-dom';
 import { theme } from '@/config/theme';
+import { useContactForm } from '@/contexts/ContactFormContext';
+
+// Helper function to scroll to top on navigation
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const { setFormComment } = useContactForm();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -66,7 +76,12 @@ const Index = () => {
   ];
   
 
-  const scrollToContact = () => {
+  const scrollToContact = (serviceTitle?: string) => {
+    // If service title is provided, set it as the contact form comment
+    if (serviceTitle) {
+      setFormComment(`Интересует услуга: ${serviceTitle}`);
+    }
+    
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -100,7 +115,7 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  onClick={scrollToContact}
+                  onClick={() => scrollToContact("Предварительная запись на сервис")}
                   className="text-white px-8 py-6 text-lg font-medium rounded-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 shadow-lg hover:opacity-90"
                   style={{ backgroundColor: theme.colors.button.primary }}
                 >
@@ -243,7 +258,6 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Link to="/services/maintenance">
               <Card 
                 className="border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl group cursor-pointer"
                 style={{ 
@@ -268,15 +282,20 @@ const Index = () => {
                   <Button 
                     className="w-full text-white rounded-xl py-3 transition-all duration-300 hover:opacity-90"
                     style={{ backgroundColor: theme.colors.button.primary }}
+                    onClick={(e) => {
+                      // We want to navigate to the page, not scroll to contact
+                      // No need to prevent default
+                      window.location.href = "/services/maintenance";
+                    }}
                   >
                     Подробнее
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
               </Card>
-            </Link>
+            
 
-            <Link to="/services/transmission">
+            
               <Card 
                 className="border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl group cursor-pointer"
                 style={{ 
@@ -301,15 +320,17 @@ const Index = () => {
                   <Button 
                     className="w-full text-white rounded-xl py-3 transition-all duration-300 hover:opacity-90"
                     style={{ backgroundColor: theme.colors.button.primary }}
+                    onClick={(e) => {
+                      // We want to navigate to the page, not scroll to contact
+                      window.location.href = "/services/transmission";
+                    }}
                   >
                     Подробнее
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
               </Card>
-            </Link>
 
-            <Link to="/services/engine">
               <Card 
                 className="border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl group cursor-pointer"
                 style={{ 
@@ -334,15 +355,19 @@ const Index = () => {
                   <Button 
                     className="w-full text-white rounded-xl py-3 transition-all duration-300 hover:opacity-90"
                     style={{ backgroundColor: theme.colors.button.primary }}
+                    onClick={(e) => {
+                      // We want to navigate to the page, not scroll to contact
+                      window.location.href = "/services/engine";
+                    }}
                   >
                     Подробнее
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
               </Card>
-            </Link>
+            
 
-            <Link to="/services/tuning">
+            
               <Card 
                 className="border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl group cursor-pointer"
                 style={{ 
@@ -367,13 +392,17 @@ const Index = () => {
                   <Button 
                     className="w-full text-white rounded-xl py-3 transition-all duration-300 hover:opacity-90"
                     style={{ backgroundColor: theme.colors.button.primary }}
+                    onClick={(e) => {
+                      // We want to navigate to the page, not scroll to contact
+                      window.location.href = "/services/tuning";
+                    }}
                   >
                     Подробнее
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
               </Card>
-            </Link>
+            
           </div>
         </div>
       </section>

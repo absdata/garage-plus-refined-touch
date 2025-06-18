@@ -7,6 +7,13 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { theme } from '@/config/theme';
 
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
+
 const Maintenance = () => {
   const services = [
     {
@@ -71,6 +78,7 @@ const Maintenance = () => {
                 key={service.id}
                 to={`/services/maintenance/${service.id}`}
                 className="group"
+                onClick={scrollToTop}
               >
                 <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 rounded-2xl overflow-hidden bg-white/90 backdrop-blur-sm group">
                   <div className="aspect-[4/3] overflow-hidden">

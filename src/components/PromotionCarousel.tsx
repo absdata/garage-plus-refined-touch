@@ -4,8 +4,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { theme } from '@/config/theme';
+import { useContactForm } from '@/contexts/ContactFormContext';
 
 export const PromotionCarousel = () => {
+  const { setFormComment } = useContactForm();
 
   const promotions = [
     {
@@ -26,17 +28,24 @@ export const PromotionCarousel = () => {
       image: '/promotions/to.jpg'
     },
     {
-      title: 'Чистка радиаторов',
-      description: 'Чистка радиатора кондиционера, охлаждения и интеркулера',
-      price: '3 990 ₽',
-      originalPrice: '5 500 ₽',
-      deadline: 'Только до 1 августа',
-      badge: 'Хит'
+      title: '"Тополиный пух, жара…"',
+      description: 'Скидка 20% на работы по чистке и мойке всех радиаторов (с полной съёмкой "кассеты" радиаторов, разборкой, мойкой и сборкой)',
+      price: 'от 48 000 ₽',
+      originalPrice: '60 000 ₽',
+      deadline: 'Сезонное предложение',
+      badge: 'Скидка 20%',
+      image: '/promotions/radiator.jpg'
     }
+   
   ];
 
 
-  const scrollToContact = () => {
+  const handlePromoClick = (promo: any) => {
+    // Set the comment with promotion details
+    const commentText = `Интересует акция: ${promo.title}\n${promo.description}\nЦена: ${promo.price}`;
+    setFormComment(commentText);
+    
+    // Scroll to contact section
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -97,7 +106,7 @@ export const PromotionCarousel = () => {
               <div className="text-sm" style={{ color: theme.colors.text.muted }}>{promo.deadline}</div>
               
               <Button 
-                onClick={scrollToContact}
+                onClick={() => handlePromoClick(promo)}
                 className="w-full text-white py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:opacity-90"
                 style={{ backgroundColor: theme.colors.button.primary }}
               >

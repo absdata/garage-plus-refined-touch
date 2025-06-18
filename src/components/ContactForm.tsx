@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -7,14 +7,23 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
 import { theme } from '@/config/theme';
+import { useContactForm } from '@/contexts/ContactFormContext';
 
 export const ContactForm = () => {
+  const { formComment, setFormComment } = useContactForm();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     comment: '',
     consent: false
   });
+  
+  // Update form comment when context changes
+  useEffect(() => {
+    if (formComment) {
+      setFormData(prev => ({ ...prev, comment: formComment }));
+    }
+  }, [formComment]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,6 +50,9 @@ export const ContactForm = () => {
       comment: '',
       consent: false
     });
+    
+    // Reset the context too
+    setFormComment('');
   };
 
   return (
