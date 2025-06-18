@@ -352,7 +352,7 @@ const Index = () => {
               >
                 <div className="aspect-[4/3] overflow-hidden rounded-t-2xl">
                   <img 
-                    src="tuning1.jpg"
+                    src="services/tuning.jpg"
                     alt="Тюнинг"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />

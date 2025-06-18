@@ -1,13 +1,11 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { theme } from '@/config/theme';
 
 export const PromotionCarousel = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   const promotions = [
     {
@@ -22,8 +20,7 @@ export const PromotionCarousel = () => {
     {
       title: 'ТО + Диагностика ходовой БЕСПЛАТНО',
       description: 'Пройдите техническое обслуживание и получите профессиональную диагностику ходовой части автомобиля в подарок',
-      price: 'от 8 500 ₽',
-      originalPrice: '11 000 ₽',
+      price: 'от 25 500 ₽',
       deadline: 'Ограниченное время',
       badge: 'Подарок',
       image: '/promotions/to.jpg'
@@ -35,32 +32,9 @@ export const PromotionCarousel = () => {
       originalPrice: '5 500 ₽',
       deadline: 'Только до 1 августа',
       badge: 'Хит'
-    },
-    {
-      title: 'Скидка 20% на тормозные диски',
-      description: 'При замене комплекта — скидка на работу',
-      price: 'от 8 000 ₽',
-      originalPrice: 'от 10 000 ₽',
-      deadline: 'До конца месяца',
-      badge: 'Скидка'
-    },
-    {
-      title: 'Бесплатная диагностика при ТО',
-      description: 'Полная компьютерная диагностика в подарок',
-      price: '0 ₽',
-      originalPrice: '2 500 ₽',
-      deadline: 'Постоянная акция',
-      badge: 'Подарок'
     }
   ];
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % promotions.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + promotions.length) % promotions.length);
-  };
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
@@ -71,39 +45,12 @@ export const PromotionCarousel = () => {
 
   return (
     <div className="relative">
-      <div className="flex items-center justify-between mb-8">
+      <div className="mb-8">
         <h3 className="text-2xl font-bold" style={{ color: theme.colors.text.primary }}>Актуальные предложения</h3>
-        
-        <div className="flex space-x-2">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={prevSlide}
-            className="rounded-full w-10 h-10 p-0"
-            style={{ 
-              borderColor: theme.colors.text.muted,
-              color: theme.colors.text.primary
-            }}
-          >
-            <ChevronLeft className="h-4 w-4" />
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={nextSlide}
-            className="rounded-full w-10 h-10 p-0"
-            style={{ 
-              borderColor: theme.colors.text.muted,
-              color: theme.colors.text.primary
-            }}
-          >
-            <ChevronRight className="h-4 w-4" />
-          </Button>
-        </div>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {promotions.slice(currentSlide, currentSlide + 3).map((promo, index) => (
+        {promotions.map((promo, index) => (
           <Card 
             key={index} 
             className="border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl relative overflow-hidden"
