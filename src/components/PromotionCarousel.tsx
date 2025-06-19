@@ -29,7 +29,7 @@ export const PromotionCarousel = () => {
     },
     {
       title: '"Тополиный пух, жара…"',
-      description: 'Скидка 20% на работы по чистке и мойке всех радиаторов с полным демонтажем "кассеты" радиаторов, разборкой, мойкой, сборкой, монтажем и заправкой всех систем',
+      description: 'Скидка 20% на работы по чистке и мойке всех радиаторов (с полным демонтажем "кассеты" радиаторов, разборкой, мойкой, сборкой, монтажом и заправкой всех систем)',
       price: 'от 48 000 ₽',
       originalPrice: '60 000 ₽',
       deadline: 'Сезонное предложение',
@@ -62,7 +62,7 @@ export const PromotionCarousel = () => {
         {promotions.map((promo, index) => (
           <Card 
             key={index} 
-            className="border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl relative overflow-hidden"
+            className="border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl relative overflow-hidden flex flex-col h-full"
             style={{ 
               backgroundColor: theme.colors.surface,
               boxShadow: theme.colors.shadows.card
@@ -95,7 +95,7 @@ export const PromotionCarousel = () => {
               </CardDescription>
             </CardHeader>
             
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 flex-grow flex flex-col">
               <div className="flex items-center space-x-3">
                 <div className="text-2xl font-bold" style={{ color: theme.colors.text.primary }}>{promo.price}</div>
                 {promo.originalPrice && (
@@ -103,15 +103,17 @@ export const PromotionCarousel = () => {
                 )}
               </div>
               
-              <div className="text-sm" style={{ color: theme.colors.text.muted }}>{promo.deadline}</div>
+              <div className="text-sm mb-4" style={{ color: theme.colors.text.muted }}>{promo.deadline}</div>
               
-              <Button 
-                onClick={() => handlePromoClick(promo)}
-                className="w-full text-white py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:opacity-90"
-                style={{ backgroundColor: theme.colors.button.primary }}
-              >
-                Записаться
-              </Button>
+              <div className="mt-auto pt-4">
+                <Button 
+                  onClick={() => handlePromoClick(promo)}
+                  className="w-full text-white py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:opacity-90"
+                  style={{ backgroundColor: theme.colors.button.primary }}
+                >
+                  Записаться
+                </Button>
+              </div>
             </CardContent>
           </Card>
         ))}
