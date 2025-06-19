@@ -103,7 +103,7 @@ export const ContactSection = () => {
                     </h3>
                     <div style={{ color: theme.colors.text.secondary }} className="space-y-1">
                       <p>ПН-ПТ: 11:30-20:30</p>
-                      <p>СБ: 12:00-17:00</p>
+                      <p>СБ: 12:00-17:00 (по предварительной записи)</p>
                       <p>ВС: выходной</p>
                     </div>
                   </div>

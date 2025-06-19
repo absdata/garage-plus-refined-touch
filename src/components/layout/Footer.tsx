@@ -65,7 +65,7 @@ export const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <img 
-                src="/logo.png" 
+                src="/logo_inv.png" 
                 alt="GARAGE PLUS" 
                 className="h-10 w-auto"
               />
@@ -187,7 +187,7 @@ export const Footer = () => {
             <div className="space-y-2" style={{ color: theme.colors.background }}>
               <p>г. Москва, ул. Поклонная, 11 стр. 1А</p>
               <p>+7 (495) 221-8480</p>
-              <p>ПН-ПТ: 11:30-20:30<br />СБ: 12:00-17:00<br />ВС: выходной</p>
+              <p>ПН-ПТ: 11:30-20:30<br />СБ: 12:00-17:00 (по предварительной записи)<br />ВС: выходной</p>
               <Button 
                 variant="outline"
                 size="sm"

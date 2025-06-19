@@ -54,11 +54,18 @@ const Maintenance = () => {
         style={{ background: theme.colors.gradients.heroAlt }}
       >
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-black">
+          <div className="text-center">
+            <h1 
+              className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent"
+              style={{ 
+                background: theme.colors.gradients.text,
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}
+            >
               Техническое обслуживание и ремонт
             </h1>
-            <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl max-w-2xl mx-auto" style={{ color: theme.colors.text.secondary }}>
               Профессиональное обслуживание Mercedes-Benz W222 по стандартам завода-изготовителя. 
               Используем только оригинальные запчасти и расходные материалы.
             </p>
@@ -68,11 +75,11 @@ const Maintenance = () => {
 
       {/* Services Grid */}
       <section 
-        className="pb-20 px-4"
+        className="py-20"
         style={{ backgroundColor: theme.colors.background }}
       >
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service) => (
               <Link 
                 key={service.id}
@@ -80,8 +87,14 @@ const Maintenance = () => {
                 className="group"
                 onClick={scrollToTop}
               >
-                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 rounded-2xl overflow-hidden bg-white/90 backdrop-blur-sm group">
-                  <div className="aspect-[4/3] overflow-hidden">
+                <Card 
+                  className="border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl group cursor-pointer"
+                  style={{ 
+                    backgroundColor: theme.colors.surface,
+                    boxShadow: theme.colors.shadows.card
+                  }}
+                >
+                  <div className="aspect-[4/3] overflow-hidden rounded-t-2xl">
                     <img 
                       src={service.image} 
                       alt={service.title}
@@ -91,12 +104,20 @@ const Maintenance = () => {
                   
                   <CardHeader className="pb-4">
                     <div className="flex justify-between items-start mb-2">
-                      <CardTitle className="text-xl text-black group-hover:text-slate-700 transition-colors duration-300">{service.title}</CardTitle>
-                      <div className="text-lg font-bold text-black">{service.price}</div>
+                      <CardTitle 
+                        className="text-xl group-hover:opacity-90 transition-all duration-300"
+                        style={{ color: theme.colors.text.primary }}
+                      >
+                        {service.title}
+                      </CardTitle>
+                      <div className="text-lg font-bold" style={{ color: theme.colors.text.primary }}>{service.price}</div>
                     </div>
-                    <CardDescription className="text-black leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
+                    <p 
+                      className="group-hover:opacity-90 transition-all duration-300"
+                      style={{ color: theme.colors.text.secondary }}
+                    >
                       {service.description}
-                    </CardDescription>
+                    </p>
                   </CardHeader>
                   
                   <CardContent className="pt-0">
