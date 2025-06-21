@@ -7,7 +7,8 @@
       "WebFetch(domain:pixabay.com)",
       "Bash(mkdir -p /Users/Shared/Shared\\ Docs/ABS/Клиенты/Гараж\\ Плюс/garage-plus-refined-touch/public/services)",
       "Bash(mkdir -p /Users/Shared/Shared\\ Docs/ABS/Клиенты/Гараж\\ Плюс/garage-plus-refined-touch/public/services/maintenance)",
-      "Bash(ls -l /Users/Shared/Shared\\ Docs/ABS/Клиенты/Гараж\\ Плюс/garage-plus-refined-touch/src/pages/services/)"
+      "Bash(ls -l /Users/Shared/Shared\\ Docs/ABS/Клиенты/Гараж\\ Плюс/garage-plus-refined-touch/src/pages/services/)",
+      "Bash(mkdir -p docs)"
     ],
     "deny": []
   }
