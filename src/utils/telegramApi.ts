@@ -45,7 +45,7 @@ export async function sendTelegramMessage(message: string): Promise<boolean> {
 
 export function formatContactFormMessage(name: string, phone: string, comment?: string): string {
   return `
-<b>Новая заявка с сайта</b>
+<b>Новая заявка</b>
 
 <b>Имя:</b> ${name}
 <b>Телефон:</b> ${phone}
