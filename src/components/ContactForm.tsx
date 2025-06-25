@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
 import { theme } from '@/config/theme';
 import { useContactForm } from '@/contexts/ContactFormContext';
+import { sendTelegramMessage, formatContactFormMessage } from '@/utils/telegramApi';
 
 export const ContactForm = () => {
   const { formComment, setFormComment } = useContactForm();
@@ -25,7 +26,7 @@ export const ContactForm = () => {
     }
   }, [formComment]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!formData.consent) {
@@ -37,22 +38,42 @@ export const ContactForm = () => {
       return;
     }
 
-    // Simulate form submission
-    toast({
-      title: "Заявка отправлена!",
-      description: "Мы свяжемся с вами в ближайшее время.",
-    });
+    try {
+      const message = formatContactFormMessage(
+        formData.name, 
+        formData.phone, 
+        formData.comment
+      );
 
-    // Reset form
-    setFormData({
-      name: '',
-      phone: '',
-      comment: '',
-      consent: false
-    });
-    
-    // Reset the context too
-    setFormComment('');
+      const success = await sendTelegramMessage(message);
+
+      if (success) {
+        toast({
+          title: "Заявка отправлена!",
+          description: "Мы свяжемся с вами в ближайшее время.",
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          phone: '',
+          comment: '',
+          consent: false
+        });
+        
+        // Reset the context too
+        setFormComment('');
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Ошибка отправки",
+        description: "Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
